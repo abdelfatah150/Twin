@@ -1,0 +1,12 @@
+D:\CS\4th_year\GP\Twin\Twin.Core\bin\Debug\net8.0\Twin.Core.deps.json
+D:\CS\4th_year\GP\Twin\Twin.Core\bin\Debug\net8.0\Twin.Core.dll
+D:\CS\4th_year\GP\Twin\Twin.Core\bin\Debug\net8.0\Twin.Core.pdb
+D:\CS\4th_year\GP\Twin\Twin.Core\obj\Debug\net8.0\Twin.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\CS\4th_year\GP\Twin\Twin.Core\obj\Debug\net8.0\Twin.Core.AssemblyInfoInputs.cache
+D:\CS\4th_year\GP\Twin\Twin.Core\obj\Debug\net8.0\Twin.Core.AssemblyInfo.cs
+D:\CS\4th_year\GP\Twin\Twin.Core\obj\Debug\net8.0\Twin.Core.csproj.CoreCompileInputs.cache
+D:\CS\4th_year\GP\Twin\Twin.Core\obj\Debug\net8.0\Twin.Core.sourcelink.json
+D:\CS\4th_year\GP\Twin\Twin.Core\obj\Debug\net8.0\Twin.Core.dll
+D:\CS\4th_year\GP\Twin\Twin.Core\obj\Debug\net8.0\refint\Twin.Core.dll
+D:\CS\4th_year\GP\Twin\Twin.Core\obj\Debug\net8.0\Twin.Core.pdb
+D:\CS\4th_year\GP\Twin\Twin.Core\obj\Debug\net8.0\ref\Twin.Core.dll

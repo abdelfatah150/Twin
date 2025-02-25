@@ -1,4 +1,7 @@
 
+using Microsoft.EntityFrameworkCore;
+using Twin.Repository.Data;
+
 namespace TwinBackend
 {
     public class Program
@@ -13,6 +16,11 @@ namespace TwinBackend
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddDbContext<AccountDBContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("AuthDB"));
+            });
 
             var app = builder.Build();
 

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Twin.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+61797625cec071e25f21f69e484c00ce0354d784")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1dab6f6633da87dcebab8bcd50621954bf79b795")]
 [assembly: System.Reflection.AssemblyProductAttribute("Twin.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Twin.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
