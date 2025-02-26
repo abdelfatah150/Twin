@@ -1,6 +1,0 @@
-@TwinBackend_HostAddress = http://localhost:5044
-
-GET {{TwinBackend_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
