@@ -1,0 +1,62 @@
+.email-text {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.email-highlight {
+    color: #224f34;
+    font-weight: bold;
+}
+
+.code-input-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.code-box {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+}
+
+.verify-btn, .login-btn {
+    background-color: #224f34;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 200px;
+}
+
+.verify-btn:hover, .login-btn:hover {
+    background-color: #1a3d29;
+}
+
+.verification-success {
+    text-align: center;
+}
+
+.checkmark {
+    font-size: 40px;
+    color: white;
+    margin: 20px auto;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #224f34;
+    border: 3px solid #224f34;
+}
