@@ -1,0 +1,116 @@
+.entrepreneur-signup {
+    background-color: #E2FBEA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .signup-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 70px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 70vw;
+    height: 70vh;
+    max-width: 1200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .personal-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .personal-info-fields {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  input, select, button {
+    width: 80%;
+    max-width: 400px;
+    margin: 15px 0;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  button {
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .next-btn, .create-btn {
+    background-color: #224f34;
+  }
+  
+  .login-text, .terms {
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: center;
+    color: #666; 
+
+  }
+  
+  .link {
+    color: #224f34;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  * {
+    font-family: Arial Black, sans-serif;
+}
+
+.step-indicator {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    background: transparent;
+    box-shadow: none;
+}
+
+.step {
+    flex: 1;
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: bold;
+    background: #ccc;
+    color: black;
+    border-radius: 0;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.step-1 {
+    border-radius: 10px 0 0 10px;
+    cursor: pointer;
+}
+
+.step-2 {
+    border-radius: 0 10px 10px 0;
+}
+
+.step.active {
+    background: white;
+    border: 2px solid #ccc;
+}
