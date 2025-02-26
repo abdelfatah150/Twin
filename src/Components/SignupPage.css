@@ -1,7 +1,4 @@
-body {
-    margin: 0px;
-    font-family: Arial Black, sans-serif;
-}
+
 .signup-container {
     display: flex;
     height: 100vh; /* Full viewport height */
