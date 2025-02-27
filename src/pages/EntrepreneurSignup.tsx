@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./EntrepreneurSignup.css";
-import StandardPage from "../Components/StandardPage";
+import "../styles/EntrepreneurSignup.css";
+import StandardPage from "../components/StandardPage";
 
 const EntrepreneurSignup: React.FC = () => {
   const navigate = useNavigate();

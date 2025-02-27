@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import StandardPage from "../Components/StandardPage";
-import "./LoginPage.css";
+import StandardPage from "../components/StandardPage";
+import "../styles/LoginPage.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const LoginPage: React.FC = () => {

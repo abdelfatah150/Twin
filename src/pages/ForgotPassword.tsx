@@ -1,5 +1,6 @@
 import React from "react";
-import StandardPage from "../Components/StandardPage";
+import StandardPage from "../components/StandardPage";
+import "../styles/ForgotPassword.css"
 
 const ForgotPassword: React.FC = () => {
   return (

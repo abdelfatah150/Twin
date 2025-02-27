@@ -1,5 +1,6 @@
 import React from "react";
-import StandardPage from "../Components/StandardPage";
+import StandardPage from "../components/StandardPage";
+import "../styles/TestPage.css"
 
 const TestPage: React.FC = () => {
   return (

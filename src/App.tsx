@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import DeveloperSignup from "./Components/DeveloperSignup";
-import EntrepreneurSignup from "./Components/EntrepreneurSignup";
-import SignupPage from "./Components/SignupPage";
-import CheckEmailPage from "./Components/CheckEmail"
-import LoginPage from "./Components/LoginPage"
-import ForgotPassword from "./Components/ForgotPassword"
-import TestPage from "./Components/TestPage"
+import DeveloperSignup from "./pages/DeveloperSignup";
+import EntrepreneurSignup from "./pages/EntrepreneurSignup";
+import SignupPage from "./pages/SignupPage";
+import CheckEmailPage from "./pages/CheckEmail"
+import LoginPage from "./pages/LoginPage"
+import ForgotPassword from "./pages/ForgotPassword"
+import TestPage from "./pages/TestPage"
 
 import "./App.css"
 
