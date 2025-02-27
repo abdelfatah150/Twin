@@ -1,0 +1,105 @@
+/* ===== Signup Container ===== */
+.signup-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .signup-fields {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  input, select {
+    width: 80%;
+    max-width: 400px;
+    margin: 15px 0;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  
+  /* Focus effect */
+  input:focus, select:focus {
+    border-color: #224f34;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(34, 79, 52, 0.5);
+  }
+  
+  /* ===== Buttons ===== */
+  button {
+    width: 80%;
+    max-width: 400px;
+    margin: 15px 0;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+  }
+  
+  .next-btn, .create-btn {
+    background-color: #224f34;
+    color: white;
+  }
+  
+  button:hover {
+    background-color: #1a3d27;
+    transform: scale(1.02);
+  }
+  
+  /* ===== Step Indicator ===== */
+  .step-indicator {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    background: transparent;
+    box-shadow: none;
+  }
+  
+  .step {
+    flex: 1;
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: bold;
+    background: #ccc;
+    color: black;
+    transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+  }
+  
+  .step-1 {
+    border-radius: 10px 0 0 10px;
+    cursor: pointer;
+  }
+  
+  .step-2 {
+    border-radius: 0 10px 10px 0;
+  }
+  
+  .step.active {
+    background: white;
+    border: 2px solid #224f34;
+    color: #224f34;
+  }
+  .select__control {
+    width: 80%;
+    width: 400px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 4px 8px;
+}

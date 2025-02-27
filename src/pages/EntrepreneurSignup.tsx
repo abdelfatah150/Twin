@@ -7,11 +7,12 @@ const EntrepreneurSignup: React.FC = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
-    fullName: "",
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
     confirmPassword: "",
-    track: "",
+    field: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -31,7 +32,6 @@ const EntrepreneurSignup: React.FC = () => {
       {step === 1 ? (
         <div className="personal-info-container">
           <div className="personal-info-fields">
-            <input type="text" name="fullName" placeholder="Full Name" value={formData.fullName} onChange={handleChange} />
             <input type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleChange} />
             <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} />
             <input type="password" name="confirmPassword" placeholder="Confirm Password" value={formData.confirmPassword} onChange={handleChange} />
@@ -42,11 +42,13 @@ const EntrepreneurSignup: React.FC = () => {
       ) : (
         <div className="personal-info-container">
           <div className="personal-info-fields">
-            <select name="track" value={formData.track} onChange={handleChange}>
-              <option value="" disabled>Select Your Track</option>
-              <option value="web-development">Web Development</option>
-              <option value="data-science">Data Science</option>
-              <option value="mobile-development">Mobile Development</option>
+            <input type="text" name="firstName" placeholder="First Name" value={formData.firstName} onChange={handleChange} />
+            <input type="text" name="lastName" placeholder="Last Name" value={formData.lastName} onChange={handleChange} />
+            <select name="field" value={formData.field} onChange={handleChange}>
+              <option value="" disabled>Select Your Field</option>
+              <option value="healthcare">Healthcare</option>
+              <option value="finance">Finance</option>
+              <option value="commerce">Commerce</option>
             </select>
           </div>
           <button className="create-btn" onClick={() => navigate("/signup/check-email")}>Create Account</button>

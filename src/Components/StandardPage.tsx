@@ -1,5 +1,5 @@
 import React from "react";
-import "./StandardPage.css";
+import "./styles/StandardPage.css";
 
 const StandardPage: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
