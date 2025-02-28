@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TwinBackend.Service.Security
+namespace TwinBackend.Service.MainServices
 {
-    internal interface IJwtService
+    public class MailService
     {
     }
 }
