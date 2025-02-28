@@ -1,8 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import DeveloperSignup from "./pages/DeveloperSignup";
-import EntrepreneurSignup from "./pages/EntrepreneurSignup";
+// import DeveloperSignup from "./pages/DeveloperSignup";
+// import EntrepreneurSignup from "./pages/EntrepreneurSignup";
+import SignupForm from "./pages/SignupForm";
 import SignupPage from "./pages/SignupPage";
 import CheckEmailPage from "./pages/CheckEmail"
 import LoginPage from "./pages/LoginPage"
@@ -16,8 +17,9 @@ const App: React.FC = () => {
     <Router>
       <Routes>
         <Route path="/signup" element={<SignupPage />} />
-        <Route path="/signup/developer" element={<DeveloperSignup />} />
-        <Route path="/signup/entrepreneur" element={<EntrepreneurSignup />} />
+        {/* <Route path="/signup/developer" element={<DeveloperSignup />} />
+        <Route path="/signup/entrepreneur" element={<EntrepreneurSignup />} /> */}
+        <Route path="/signup/form" element={<SignupForm />} />
         <Route path="/signup/check-email" element={<CheckEmailPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/test" element={<TestPage />} />

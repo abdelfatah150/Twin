@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import StandardPage from "../components/StandardPage";
 import "../styles/CheckEmail.css";
@@ -8,6 +8,24 @@ const CheckEmailPage: React.FC = () => {
   const [email] = useState("youremail@example.com"); // Replace with actual email
   const [code, setCode] = useState(["", "", "", ""]);
   const [isVerified, setIsVerified] = useState(false);
+  const [userRole, setUserRole] = useState<string | null>(null);
+
+
+    // Retrieve user role from sessionStorage on mount
+    useEffect(() => {
+      const role = sessionStorage.getItem("userRole");
+      setUserRole(role);
+    }, []);
+  
+    // Handle navigation based on role
+    const handleContinue = () => {
+      if (userRole === "developer") {
+        navigate("/test");
+      } else {
+        navigate("/login");
+      }
+    };
+  
 
   const handleChange = (index: number, value: string) => {
     if (value.match(/^[0-9]$/)) {
@@ -28,7 +46,9 @@ const CheckEmailPage: React.FC = () => {
           <h1>Congratulations!</h1>
           <p className="email-text">Your email has been verified.</p>
           <div className="checkmark">✔</div>
-          <button className="login-btn" onClick={() => navigate("/login")}>Login</button>
+          <button className="login-btn" onClick={() => handleContinue()}>
+            {userRole === "developer" ? "Start Your Developer Test" : "Go to Login"}
+          </button>
         </div>
       ) : (
         <>

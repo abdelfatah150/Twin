@@ -5,6 +5,12 @@ import { useNavigate } from "react-router-dom";
 
 const SignupPage: React.FC = () => {
     const navigate = useNavigate();
+
+    const handleSignup = (role: string) => {
+      sessionStorage.setItem("userRole", role); 
+      navigate(`/signup/form`); 
+    };
+
   return (
     <div className="signup-container">
       {/* Left Side - White Background (60%) */}
@@ -26,12 +32,12 @@ const SignupPage: React.FC = () => {
           <h2>Sign up as a Developer</h2>
           <p>Tired of working on the same repetitive projects as everyone else?
           Sign up to build real-world projects that will make your portfolio stand out and enhance your resume!</p>
-          <button className="signup-button" onClick={() => navigate("developer")}>Sign Up As a Developer</button>
+          <button className="signup-button" onClick={() => handleSignup("developer")}>Sign Up As a Developer</button>
         </div>
         <div className="signup-option entrepreneur">
           <h2>Become an Entrepreneur</h2>
           <p>Register to become an entrepreneur and collaborate with a developer to turn your idea into reality!</p>
-          <button className="signup-button" onClick={() => navigate("entrepreneur")}>Sign Up As a Entrepreneur</button>
+          <button className="signup-button" onClick={() =>  handleSignup("entrepreneur")}>Sign Up As a Entrepreneur</button>
         </div>
       </div>
     </div>
