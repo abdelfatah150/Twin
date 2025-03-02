@@ -22,5 +22,7 @@ namespace TwinBackend.Core.Entities
         public string QuestionDifficulity { get; set; }
         [Required]
         public string QuestionCategory { get; set; }
+
+        public string? UserAnswer { get; set; }
     }
 }

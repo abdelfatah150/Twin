@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.IdentityModel.Tokens;
 using TwinBackend.Core.Entities;
 using TwinBackend.Core.Repositories.Contract;
 using TwinBackend.Core.Specifications.QuestionSpec;
@@ -39,6 +40,24 @@ namespace TwinBackend.Service.Services
             }
 
             return testQuestions.Take(45).ToList();
+        }
+        public async Task<double> CalculateScoretest(List<Question> questions){
+            double UserScore = 0;
+
+            foreach (var que in questions)
+            {            
+                if (que.UserAnswer != null)
+                {
+                    foreach (var ans in que.Answers)
+                    {
+                        if (ans.Answer == que.UserAnswer && ans.IsCorrect) UserScore += que.QuestionWeigth;
+                    }
+                }
+            }
+
+            // Store the user skill test in database
+
+            return UserScore;
         }
     }
 }

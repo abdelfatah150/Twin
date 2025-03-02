@@ -38,7 +38,7 @@ namespace TwinBackend.APIs.Controllers
 
             var user = new AppUser
             {
-                UserName = signUpDTO.Username,
+                UserName = signUpDTO.FullName,
                 Email = signUpDTO.Email
             };
 
