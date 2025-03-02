@@ -63,8 +63,6 @@ const EntrepreneurSignup: React.FC<EntrepreneurSignupProps> = ({ step, setStep }
 
     // Ensure all fields are properly formatted as strings
     const formattedErrors: { [key: string]: string } = {
-      track: "",
-      technologies: "",
       field: "",
       ...step2Errors, // Override with actual validation results
     };

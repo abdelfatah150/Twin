@@ -66,9 +66,8 @@ export const validateEmail = (email: string) => {
     return errors;
   };
   
-  // Validate Step 2 (Before Submitting)
   export const validateStep2 = (formData: any, userRole: "developer" | "entrepreneur") => {
-    return userRole === "developer"
+    let errors = userRole === "developer"
       ? {
           fullName: validateName(formData.fullName), // Full name validation for Developers in Step 2
           track: validateFieldSelection(formData.track),
@@ -78,5 +77,10 @@ export const validateEmail = (email: string) => {
           fullName: validateName(formData.fullName), // Full name validation for Entrepreneurs in Step 2
           field: validateFieldSelection(formData.field),
         };
+  
+    // Remove undefined or irrelevant properties
+    return Object.fromEntries(
+      Object.entries(errors).filter(([_, value]) => value !== undefined)
+    );
   };
   

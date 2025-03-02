@@ -41,7 +41,7 @@ const DeveloperSignup: React.FC<DeveloperSignupProps> = ({ step, setStep }) => {
   });
   
 
-  const [errors, setErrors] = useState<{ [key: string]: string }>({}); // Track validation errors
+  const [errors, setErrors] = useState<{ [key: string]: string }>({}); 
 
   // Handle Input Change & Validate Field Individually
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -50,7 +50,7 @@ const DeveloperSignup: React.FC<DeveloperSignupProps> = ({ step, setStep }) => {
 
     const error = validateField(name, value, formData);
     setErrors((prevErrors) => ({ ...prevErrors, [name]: error }));
-    
+
     if (name === "email") {
       sessionStorage.setItem("userEmail", value); // Save email to session storage
     }
@@ -95,7 +95,6 @@ const DeveloperSignup: React.FC<DeveloperSignupProps> = ({ step, setStep }) => {
   const formattedErrors: { [key: string]: string } = {
     track: "",
     technologies: "",
-    field: "",
     ...step2Errors, // Override with actual validation results
   };
 
