@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using TwinBackend.Core.Entities;
+using TwinBackend.Core.Repositories.Contract;
 using TwinBackend.Repository.Data;
 
 namespace TwinBackend.APIs
@@ -25,6 +26,11 @@ namespace TwinBackend.APIs
             builder.Services.AddDbContext<AccountDbContext>(options =>
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("TwinAuth"));
+            });
+
+            builder.Services.AddDbContext<TwinDbContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("TwinDB"));
             });
 
             builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
@@ -52,6 +58,8 @@ namespace TwinBackend.APIs
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
                     };
                 });
+
+            builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(IGenericRepository<>));
 
             builder.Services.AddAuthorization();
 
