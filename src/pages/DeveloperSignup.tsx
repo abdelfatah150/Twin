@@ -1,95 +1,160 @@
-// import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
-// import Select from "react-select";  // Import react-select
-// import "../styles/DeveloperSignup.css";
-// import StandardPage from "../components/StandardPage";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Select from "react-select";
+import "../styles/SignupForm.css";
+import {
+  validateField,
+  validateStep1,
+  validateStep2,
+} from "../utils/validation"; // Import validation functions
 
-// const options = [
-//   { value: "html", label: "HTML" },
-//   { value: "css", label: "CSS" },
-//   { value: "javascript", label: "JavaScript" },
-//   { value: "react", label: "React" },
-//   { value: "nodejs", label: "Node.js" },
-//   { value: "python", label: "Python" },
-//   { value: "django", label: "Django" },
-//   { value: "flask", label: "Flask" },
-//   { value: "sql", label: "SQL" },
-//   { value: "mongodb", label: "MongoDB" },
-// ];
+interface DeveloperSignupProps {
+  step: number;
+  setStep: React.Dispatch<React.SetStateAction<number>>;
+}
 
-// const DeveloperSignup: React.FC = () => {
-//   const navigate = useNavigate();
-//   const [step, setStep] = useState(1);
-//   const [formData, setFormData] = useState({
-//     fullName: "",
-//     email: "",
-//     password: "",
-//     confirmPassword: "",
-//     track: "",
-//     technologies: [] as string[],
-//     linkedin: "",
-//     github: "",
-//   });
+const techOptions = [
+  { value: "html", label: "HTML" },
+  { value: "css", label: "CSS" },
+  { value: "javascript", label: "JavaScript" },
+  { value: "react", label: "React" },
+  { value: "nodejs", label: "Node.js" },
+  { value: "python", label: "Python" },
+  { value: "django", label: "Django" },
+  { value: "flask", label: "Flask" },
+  { value: "sql", label: "SQL" },
+  { value: "mongodb", label: "MongoDB" },
+];
 
-//   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-//     setFormData({ ...formData, [e.target.name]: e.target.value });
-//   };
+const DeveloperSignup: React.FC<DeveloperSignupProps> = ({ step, setStep }) => {
+  const navigate = useNavigate();
+  
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    track: "",
+    technologies: [] as string[],
+    linkedin: "",
+    github: "",
+  });
+  
 
-//   const handleMultiSelect = (selectedOptions: any) => {
-//     setFormData({
-//       ...formData,
-//       technologies: selectedOptions ? selectedOptions.map((opt: any) => opt.value) : [],
-//     });
-//   };
+  const [errors, setErrors] = useState<{ [key: string]: string }>({}); // Track validation errors
 
-//   return (
-//     <StandardPage>
-//       <h1>Create an Account</h1>
-//       <div className="step-indicator">
-//         <div className={`step step-1 ${step === 1 ? "active" : ""}`} onClick={() => setStep(1)}>Personal Info</div>
-//         <div className={`step step-2 ${step === 2 ? "active" : ""}`}>Tech Details</div>
-//       </div>
+  // Handle Input Change & Validate Field Individually
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
 
-//       {step === 1 ? (
-//         <div className="signup-form-container">
-//           <div className="signup-fields">
-//             <input type="text" name="fullName" placeholder="Full Name" value={formData.fullName} onChange={handleChange} />
-//             <input type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleChange} />
-//             <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} />
-//             <input type="password" name="confirmPassword" placeholder="Confirm Password" value={formData.confirmPassword} onChange={handleChange} />
-//           </div>
-//           <button className="next-btn" onClick={() => setStep(2)}>Next</button>
-//           <p className="login-text">Already have an account? <a className="link" href="/login">Login</a></p>
-//         </div>
-//       ) : (
-//         <div className="signup-form-container">
-//           <div className="signup-fields">
-//             <select name="track" value={formData.track} onChange={handleChange}>
-//               <option value="" disabled>Select Your Track</option>
-//               <option value="frontend">Frontend</option>
-//               <option value="backend">Backend</option>
-//               <option value="fullstack">Full Stack</option>
-//             </select>
+    const error = validateField(name, value, formData);
+    setErrors((prevErrors) => ({ ...prevErrors, [name]: error }));
+    
+    if (name === "email") {
+      sessionStorage.setItem("userEmail", value); // Save email to session storage
+    }
+  };
 
-//             <Select
-//               options={options}
-//               isMulti
-//               value={options.filter((option) => formData.technologies.includes(option.value))}
-//               onChange={handleMultiSelect}
-//               placeholder="Select technologies..."
-//               className="basic-multi-select"
-//               classNamePrefix="select"
-//             />
+  // Handle Multi-Select Change
+  const handleMultiSelect = (selectedOptions: any) => {
+    const selectedValues = selectedOptions ? selectedOptions.map((opt: any) => opt.value) : [];
+    setFormData({ ...formData, technologies: selectedValues });
 
-//             <input type="url" name="linkedin" placeholder="LinkedIn Profile (Optional)" value={formData.linkedin} onChange={handleChange} />
-//             <input type="url" name="github" placeholder="GitHub Profile (Optional)" value={formData.github} onChange={handleChange} />
-//           </div>
-//           <button className="create-btn" onClick={() => navigate("/signup/check-email")}>Create Account</button>
-//           <p className="terms">By signing up, you agree to our <a className="link" href="/terms">Terms and Conditions</a></p>
-//         </div>
-//       )}
-//     </StandardPage>
-//   );
-// };
+    const error = validateField("technologies", selectedValues, formData);
+    setErrors((prevErrors) => ({ ...prevErrors, technologies: error }));
+  };
 
-// export default DeveloperSignup;
+  // Handle Moving to Step 2 (Validates Step 1)
+  const handleNextStep = () => {
+    const step1Errors = validateStep1(formData, "developer");
+  
+    const formattedErrors: { [key: string]: string } = {
+      fullName: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+      ...step1Errors, // Override with actual validation results
+    };
+  
+    setErrors(formattedErrors);
+  
+    if (Object.values(formattedErrors).every((error) => error === "")) {
+      setStep(2);
+    }
+  };
+  
+
+  // Handle Form Submission (Validates Step 2)
+ 
+
+  const handleSubmit = () => {
+  const step2Errors = validateStep2(formData, "developer");
+
+  // Ensure all fields are properly formatted as strings
+  const formattedErrors: { [key: string]: string } = {
+    track: "",
+    technologies: "",
+    field: "",
+    ...step2Errors, // Override with actual validation results
+  };
+
+  setErrors(formattedErrors);
+
+  if (Object.values(formattedErrors).every((error) => error === "")) {
+    navigate("/signup/check-email");
+  }
+};
+
+  return (
+    <div>
+      {step === 1 ? (
+        <div className="signup-form-container">
+          <div className="signup-fields">
+            <input type="text" name="fullName" placeholder="Full Name" value={formData.fullName} onChange={handleChange} />
+            {errors.fullName && <p className="error-text">{errors.fullName}</p>}
+
+            <input type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleChange} />
+            {errors.email && <p className="error-text">{errors.email}</p>}
+
+            <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} />
+            {errors.password && <p className="error-text">{errors.password}</p>}
+
+            <input type="password" name="confirmPassword" placeholder="Confirm Password" value={formData.confirmPassword} onChange={handleChange} />
+            {errors.confirmPassword && <p className="error-text">{errors.confirmPassword}</p>}
+          </div>
+          <button className="next-btn" onClick={handleNextStep}>Next</button>
+        </div>
+      ) : (
+        <div className="signup-form-container">
+          <div className="signup-fields">
+            <select name="track" value={formData.track} onChange={handleChange}>
+              <option value="" disabled>Select Your Track</option>
+              <option value="frontend">Frontend</option>
+              <option value="backend">Backend</option>
+              <option value="fullstack">Full Stack</option>
+            </select>
+            {errors.track && <p className="error-text">{errors.track}</p>}
+
+            <Select
+              options={techOptions}
+              isMulti
+              value={techOptions.filter((option) => formData.technologies.includes(option.value))}
+              onChange={handleMultiSelect}
+              placeholder="Select technologies..."
+              className="basic-multi-select"
+              classNamePrefix="select"
+            />
+            {errors.technologies && <p className="error-text">{errors.technologies}</p>} 
+
+            <input type="url" name="linkedin" placeholder="LinkedIn Profile (Optional)" value={formData.linkedin} onChange={handleChange} />
+            <input type="url" name="github" placeholder="GitHub Profile (Optional)" value={formData.github} onChange={handleChange} />
+          </div>
+          <button className="create-btn" onClick={handleSubmit}>Create Account</button>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default DeveloperSignup;

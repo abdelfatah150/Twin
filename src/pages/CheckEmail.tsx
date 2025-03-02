@@ -5,16 +5,17 @@ import "../styles/CheckEmail.css";
 
 const CheckEmailPage: React.FC = () => {
   const navigate = useNavigate();
-  const [email] = useState("youremail@example.com"); // Replace with actual email
+  const [email, setEmail] = useState<string | null>(null);
   const [code, setCode] = useState(["", "", "", ""]);
   const [isVerified, setIsVerified] = useState(false);
   const [userRole, setUserRole] = useState<string | null>(null);
 
 
-    // Retrieve user role from sessionStorage on mount
     useEffect(() => {
       const role = sessionStorage.getItem("userRole");
       setUserRole(role);
+      const storedEmail = sessionStorage.getItem("userEmail");
+      setEmail(storedEmail);
     }, []);
   
     // Handle navigation based on role
