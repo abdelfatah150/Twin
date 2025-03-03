@@ -23,6 +23,8 @@ namespace TwinBackend.APIs
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddScoped<TechnicalTestService>();
+            
             builder.Services.AddDbContext<AccountDbContext>(options =>
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("TwinAuth"));

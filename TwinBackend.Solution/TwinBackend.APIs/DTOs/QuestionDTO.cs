@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TwinBackend.Core.Entities
+namespace TwinBackend.APIs.DTOs
 {
-    public class Question : BaseEntity
+    public class QuestionDTO : BaseEntity
     {
         //public int QuestionId { get; set; }
         [Required]

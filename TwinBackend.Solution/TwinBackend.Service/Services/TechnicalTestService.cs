@@ -8,6 +8,7 @@ using TwinBackend.Core.Entities;
 using TwinBackend.Core.Repositories.Contract;
 using TwinBackend.Core.Specifications.QuestionSpec;
 using TwinBackend.Repository.Data.Repositories;
+using TwinBackend.APIs.DTOS;
 
 namespace TwinBackend.Service.Services
 {
@@ -41,21 +42,22 @@ namespace TwinBackend.Service.Services
 
             return testQuestions.Take(45).ToList();
         }
-        public async Task<double> CalculateScoretest(List<Question> questions){
+        
+        public async Task<double> CalculateScoretest(TestSubmitionDTO TestSubmition){
             double UserScore = 0;
 
-            foreach (var que in questions)
+            foreach (var UserAns in TestSubmition.UsersAnswers)
             {            
-                if (que.UserAnswer != null)
+                if (UserAns.Answer != null)
                 {
-                    foreach (var ans in que.Answers)
+                    foreach (var ans in UserAns.Question.Answers)
                     {
-                        if (ans.Answer == que.UserAnswer && ans.IsCorrect) UserScore += que.QuestionWeigth;
+                        if (ans.Answer == UserAns.Answer && ans.IsCorrect) UserScore += UserAns.Question.QuestionWeigth;
                     }
                 }
             }
 
-            // Store the user skill test in database
+            // Store the user score test in database
 
             return UserScore;
         }

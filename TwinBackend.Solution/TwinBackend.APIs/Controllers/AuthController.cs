@@ -1,9 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using TwinBackend.APIs.DTOs;
-using TwinBackend.Core.Entities;
-using TwinBackend.Core.Services.Contract;
 
 namespace TwinBackend.APIs.Controllers
 {
@@ -75,7 +71,7 @@ namespace TwinBackend.APIs.Controllers
                 return Unauthorized("Email Not Confirmed");
             }
 
-            return Ok(new UserDTO()
+            return Ok(
             {
                 userName = check.UserName,
                 token = await _jwtService.CreateTokenAsync(check, _userManager, 2)
