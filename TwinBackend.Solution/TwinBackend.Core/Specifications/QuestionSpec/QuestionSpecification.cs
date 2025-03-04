@@ -10,11 +10,12 @@ namespace TwinBackend.Core.Specifications.QuestionSpec
     public class QuestionSpecification : BaseSpecifications<Question>
     {
         public QuestionSpecification(QuestionSpecParams questionParams) : base(q=>
-        (questionParams.Search.HasValue) || (q.Id == questionParams.Search.Value) && 
+        (!questionParams.Search.HasValue) || (q.Id == questionParams.Search.Value) && 
         (string.IsNullOrEmpty(questionParams.QuestionCategory)) || (q.QuestionCategory == questionParams.QuestionCategory) &&
         (string.IsNullOrEmpty(questionParams.QuestionDifficulity)) || (q.QuestionDifficulity == questionParams.QuestionDifficulity)
         ) 
         {
+            Includes.Add(q => q.Answers);
         }
     }
 }

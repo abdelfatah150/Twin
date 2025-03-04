@@ -1,4 +1,4 @@
-﻿namespace TwinBackend.APIs.DTOs
+﻿namespace TwinBackend.Core.DTOs
 {
     public class UserDTO
     {

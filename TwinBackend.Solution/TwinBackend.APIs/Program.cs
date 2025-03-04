@@ -4,9 +4,12 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using TwinBackend.APIs.Helpers;
 using TwinBackend.Core.Entities;
 using TwinBackend.Core.Repositories.Contract;
 using TwinBackend.Repository.Data;
+using TwinBackend.Repository.Data.Repositories;
+using TwinBackend.Service.Services;
 
 namespace TwinBackend.APIs
 {
@@ -18,12 +21,15 @@ namespace TwinBackend.APIs
 
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers().AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            });
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            builder.Services.AddScoped<TechnicalTestService>();
+            
             
             builder.Services.AddDbContext<AccountDbContext>(options =>
             {
@@ -61,7 +67,9 @@ namespace TwinBackend.APIs
                     };
                 });
 
-            builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(IGenericRepository<>));
+            builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRespository<>));
+            builder.Services.AddScoped<TechnicalTestService,TechnicalTestService>();
+            builder.Services.AddAutoMapper(typeof(MappedProfile));
 
             builder.Services.AddAuthorization();
 

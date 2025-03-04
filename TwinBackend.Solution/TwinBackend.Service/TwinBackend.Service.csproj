@@ -7,13 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="14.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.13" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\TwinBackend.Core\TwinBackend.Core.csproj" />
     <ProjectReference Include="..\TwinBackend.Repository\TwinBackend.Repository.csproj" />
-    <ProjectReference Include="..\TwinBackend.APIs\TwinBackend.APIs.csproj" />
   </ItemGroup>
 
 </Project>

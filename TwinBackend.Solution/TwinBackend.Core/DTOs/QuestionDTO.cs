@@ -1,12 +1,14 @@
-namespace TwinBackend.APIs.DTOs
+using System.ComponentModel.DataAnnotations;
+
+namespace TwinBackend.Core.DTOs
 {
-    public class QuestionDTO : BaseEntity
+    public class QuestionDTO
     {
         //public int QuestionId { get; set; }
         [Required]
         public string Stem {  get; set; }
         [Required]
-        public List<QuestionChoices> Answers { get; set; } = new List<QuestionChoices>();
+        public List<QuestionChoicesDTO> Answers { get; set; } = new List<QuestionChoicesDTO>();
         //[Required]
         //public string CorrectAnswer { get; set; }
         [Required]

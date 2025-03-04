@@ -8,51 +8,66 @@ using TwinBackend.Core.Entities;
 using TwinBackend.Core.Repositories.Contract;
 using TwinBackend.Core.Specifications.QuestionSpec;
 using TwinBackend.Repository.Data.Repositories;
-using TwinBackend.APIs.DTOS;
+using Microsoft.AspNetCore.Http.HttpResults;
+using TwinBackend.Core.DTOs;
+using AutoMapper;
 
 namespace TwinBackend.Service.Services
 {
     public class TechnicalTestService
     {
-        private readonly QuestionRepository _questionRepository;
+        private readonly IGenericRepository<Question> _questionRepository;
+        private readonly IMapper _mapper;
 
-        public TechnicalTestService(QuestionRepository questionRepository)
+        public TechnicalTestService(IGenericRepository<Question> questionRepository, IMapper mapper)
         {
             _questionRepository = questionRepository;
+            _mapper = mapper;
         }
 
-        public async Task<IReadOnlyList<Question>> GenerateSkillTest(List<string> skills)
+        public async Task<IReadOnlyList<QuestionDTO>> GenerateSkillTest(List<string> skills)
         {
             var testQuestions = new List<Question>();
-            var QuestionsPerSkill = 45 / skills.Count;
-            var QuestionsPerLevel = QuestionsPerSkill / 3;
+            var QuestionsPerSkill = (6 / skills.Count) + (6 % skills.Count);
+            var QuestionsPerLevel = (QuestionsPerSkill / 2) + ( QuestionsPerSkill % 2);
             foreach (var skill in skills)
             {
-                var specs = new QuestionSpecParams() { QuestionCategory = skill };
+                var specs = new QuestionSpecParams() 
+                {
+                    QuestionCategory = skill
+                };
 
                 var spec = new QuestionSpecification(specs);
 
-                var result = await _questionRepository.GetAllSpecAsync(spec);
+                var tempResult = await _questionRepository.GetAllSpecAsync(spec);
 
-                for (int i = 0; i < 3; i++)
+                var existingLevels = new List<string>()
                 {
-                    testQuestions.AddRange(result.Where(q=>q.QuestionWeigth == (i+1)).OrderBy(q=> Guid.NewGuid()).Skip(new Random().Next(0, result.Count-(QuestionsPerLevel+1))).Take(QuestionsPerLevel));
+                    "Easy","Medium"
+                };
+
+                foreach(var item in existingLevels)
+                {
+                    testQuestions.AddRange(tempResult.Where(q=>q.QuestionDifficulity == item).OrderBy(q=> Guid.NewGuid()).Take(QuestionsPerLevel));
                 }
             }
 
-            return testQuestions.Take(45).ToList();
+            var temp =  testQuestions.Take(6).ToList();
+            var result = _mapper.Map<List<QuestionDTO>>(temp);
+
+            return result;
         }
         
         public async Task<double> CalculateScoretest(TestSubmitionDTO TestSubmition){
             double UserScore = 0;
 
-            foreach (var UserAns in TestSubmition.UsersAnswers)
+            foreach (var UserAns in TestSubmition.userAnswers)
             {            
-                if (UserAns.Answer != null)
+                if (UserAns.answer != null)
                 {
-                    foreach (var ans in UserAns.Question.Answers)
+                    foreach (var ans in UserAns.question.Answers)
                     {
-                        if (ans.Answer == UserAns.Answer && ans.IsCorrect) UserScore += UserAns.Question.QuestionWeigth;
+                        if (ans.Answer == UserAns.answer && ans.IsCorrect) UserScore += UserAns.question.QuestionWeigth;
                     }
                 }
             }

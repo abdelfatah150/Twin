@@ -9,7 +9,8 @@ namespace TwinBackend.Core.Specifications.QuestionSpec
     public class QuestionSpecParams
     {
         public int? Search { get; set; }
-        public string? QuestionDifficulity { get; set; }
-        public string? QuestionCategory { get; set; }
+        public string QuestionDifficulity { get; set; }
+        public string QuestionCategory { get; set; }
+        //public string? Include {  get; set; }
     }
 }

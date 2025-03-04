@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Http;
+using TwinBackend.Service.Services;
 
 namespace TwinBackend.APIs.Controllers
 {
@@ -8,36 +9,25 @@ namespace TwinBackend.APIs.Controllers
 
         private readonly TechnicalTestService _TechnicalTestService;
 
-        TestController(TechnicalTestService TechnicalTestService){
-            TechnicalTestService = _TechnicalTestService;
+        public TestController(TechnicalTestService TechnicalTestService){
+            _TechnicalTestService = TechnicalTestService;
         }
 
-        [HttpPost("CreateSkillTest")]
-        public async Task<ActionResult> CreateTest(List<string> skills){
-            
-            result = await _TechnicalTestService.GenerateSkillTest(List<string> skills);
+        [HttpGet("CreateSkillTest")]
+        public async Task<ActionResult<List<QuestionDTO>>> CreateTest(SkillTestDTO skillTest)
+        {
+            var result = await _TechnicalTestService.GenerateSkillTest(skillTest.Skills);
 
-            var quations = new UserDTO()
-            {
-                Stem = result.Stem,
-                Answers = result.Answers,
-                QuestionWeigth = result.QuestionWeigth,
-                QuestionDifficulity = result.QuestionDifficulity,
-                QuestionCategory = result.QuestionCategory
-            }
-
-            return ok(quations);
+            return Ok(result);
         }
 
         [HttpPost("CalculateScoreTest")]
-        public async Task<ActionResult> CreateTest(List<UserAnswerDTO> Answers){
-            
-            var TestSubmition = new TestSubmitionDTO();
-            TestSubmition.UsersAnswers = Answers;
+        public async Task<ActionResult> CreateTest(TestSubmitionDTO Answers)
+        {
 
-            UserScore = await _TechnicalTestService.CalculateScoretest(TestSubmitionDTO TestSubmition);
+            var UserScore = await _TechnicalTestService.CalculateScoretest(Answers);
 
-            return ok(UserScore);
+            return Ok(new {userScore = UserScore});
         }
 
     }

@@ -71,11 +71,12 @@ namespace TwinBackend.APIs.Controllers
                 return Unauthorized("Email Not Confirmed");
             }
 
-            return Ok(
-            {
-                userName = check.UserName,
-                token = await _jwtService.CreateTokenAsync(check, _userManager, 2)
-            });
+            return Ok();
+            //return Ok(
+            //{
+            //    userName = check.UserName,
+            //    token = await _jwtService.CreateTokenAsync(check, _userManager, 2)
+            //});
         }
     }
 }

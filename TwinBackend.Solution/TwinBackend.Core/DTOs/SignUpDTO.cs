@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace TwinBackend.APIs.DTOs
+namespace TwinBackend.Core.DTOs
 {
     public class SignUpDTO
     {
