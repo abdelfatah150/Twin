@@ -14,5 +14,6 @@ namespace TwinBackend.Repository.Data
 
         public DbSet<Question> Questions { get; set; }
         public DbSet<QuestionChoices> QuestionChoices { get; set; }
+        public DbSet<Developer> Developers { get; set; }
     }
 }

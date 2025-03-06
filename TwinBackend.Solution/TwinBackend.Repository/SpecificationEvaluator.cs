@@ -11,7 +11,7 @@ namespace TwinBackend.Repository
 {
     public static class SpecificationEvaluator<T> where T : BaseEntity
     {
-        public static IQueryable<T> GetSpecItems(IQueryable<T> innerQuery, ISpecifications<T> specifications)
+        public static IEnumerable<T> GetSpecItems(IQueryable<T> innerQuery, ISpecifications<T> specifications)
         {
             var query = innerQuery;
 

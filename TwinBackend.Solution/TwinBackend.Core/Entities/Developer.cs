@@ -8,19 +8,20 @@ namespace TwinBackend.Core.Entities
 {
     public class Developer : BaseEntity
     {
-        public bool isActive;
-        public bool isWorking;
-        public ProjectTask? CurrentTask;
-        public double SkillTestScore;
-        public string GithubLink;
-        public List<string> Titles;
-        public List<string> Skills;
-        public int RejectedOffersCounter;
-        public int MissedOffersCounter;
-        public Offer? CurrentOffer;
-        public List<ProjectTask> FinishedTasks;
-        public double AvgTasksRating;
-        public List<bool> HassAccessToMarketplace;
-        public bool IsConfirmed;
+        public string Email { get; set; }
+        public bool isActive { get; set; }
+        public bool isWorking { get; set; }
+        //public ProjectTask? CurrentTask;
+        public double SkillTestScore { get; set; }
+        public string GithubLink { get; set; }
+        public List<DeveloperTitle> Titles { get; set; }
+        public List<DeveloperSkill> Skills { get; set; }
+        public int RejectedOffersCounter { get; set; }
+        public int MissedOffersCounter { get; set; }
+        //public Offer? CurrentOffer;
+        //public List<ProjectTask> FinishedTasks;
+        public double AvgTasksRating { get; set; }
+        //public List<bool> HassAccessToMarketplace;
+        public bool IsConfirmed { get; set; }
     }
 }

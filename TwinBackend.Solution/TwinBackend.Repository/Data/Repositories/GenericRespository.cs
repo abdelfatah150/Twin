@@ -34,14 +34,19 @@ namespace TwinBackend.Repository.Data.Repositories
             return await _twinDbContext.Set<T>().ToListAsync();
         }
 
-        public  async Task<IReadOnlyList<T>> GetAllSpecAsync(ISpecifications<T> spec)
+        public IEnumerable<T> GetAllSpecAsync(ISpecifications<T> spec)
         {
-            return await SpecificationEvaluator<T>.GetSpecItems(_twinDbContext.Set<T>(), spec).ToListAsync();
+            return SpecificationEvaluator<T>.GetSpecItems(_twinDbContext.Set<T>(), spec);
         }
 
         public async Task<T> GetById(int id)
         {
             return await _twinDbContext.Set<T>().FindAsync(id);
+        }
+
+        public int SaveChanges()
+        {
+            return _twinDbContext.SaveChanges();
         }
 
         public void Update(T entity)

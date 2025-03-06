@@ -11,21 +11,24 @@ using TwinBackend.Repository.Data.Repositories;
 using Microsoft.AspNetCore.Http.HttpResults;
 using TwinBackend.Core.DTOs;
 using AutoMapper;
+using TwinBackend.Core.Specifications.DeveloperSpec;
 
 namespace TwinBackend.Service.Services
 {
     public class TechnicalTestService
     {
         private readonly IGenericRepository<Question> _questionRepository;
+        //private readonly IGenericRepository<Developer> _developerRepository;
         private readonly IMapper _mapper;
 
-        public TechnicalTestService(IGenericRepository<Question> questionRepository, IMapper mapper)
+        public TechnicalTestService(IGenericRepository<Question> questionRepository, IMapper mapper, IGenericRepository<Developer> developerRepository)
         {
             _questionRepository = questionRepository;
             _mapper = mapper;
+            //_developerRepository = developerRepository;
         }
 
-        public async Task<IReadOnlyList<QuestionDTO>> GenerateSkillTest(List<string> skills)
+        public IEnumerable<QuestionDTO> GenerateSkillTest(List<string> skills)
         {
             var testQuestions = new List<Question>();
             var QuestionsPerSkill = (6 / skills.Count) + (6 % skills.Count);
@@ -39,7 +42,7 @@ namespace TwinBackend.Service.Services
 
                 var spec = new QuestionSpecification(specs);
 
-                var tempResult = await _questionRepository.GetAllSpecAsync(spec);
+                var tempResult = _questionRepository.GetAllSpecAsync(spec);
 
                 var existingLevels = new List<string>()
                 {
@@ -73,6 +76,7 @@ namespace TwinBackend.Service.Services
             }
 
             // Store the user score test in database
+            
 
             return UserScore;
         }

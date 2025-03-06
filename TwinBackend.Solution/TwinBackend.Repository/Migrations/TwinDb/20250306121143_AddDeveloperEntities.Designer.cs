@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TwinBackend.Repository.Data;
 
@@ -10,9 +11,11 @@ using TwinBackend.Repository.Data;
 namespace TwinBackend.Repository.Migrations.TwinDb
 {
     [DbContext(typeof(TwinDbContext))]
-    partial class TwinDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250306121143_AddDeveloperEntities")]
+    partial class AddDeveloperEntities
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,10 +34,6 @@ namespace TwinBackend.Repository.Migrations.TwinDb
 
                     b.Property<double>("AvgTasksRating")
                         .HasColumnType("float");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("GithubLink")
                         .IsRequired()

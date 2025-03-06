@@ -14,7 +14,8 @@ namespace TwinBackend.Core.Repositories.Contract
         Task Add(T entity);
         void Update(T entity);
         void Delete(T entity);
-        Task<IReadOnlyList<T>> GetAllSpecAsync(ISpecifications<T> spec);
+        IEnumerable<T> GetAllSpecAsync(ISpecifications<T> spec);
         Task<T> GetById(int id);
+        int SaveChanges();
     }
 }
