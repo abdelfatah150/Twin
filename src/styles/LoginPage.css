@@ -1,11 +1,4 @@
-* {
-    font-family: Poppins Black, sans-serif;
-    font-weight: bold;
-}
 
-body {
-    margin: 0px;
-}
 .login-form {
     display: flex;
     flex-direction: column;
