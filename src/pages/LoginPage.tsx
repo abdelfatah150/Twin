@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import StandardPage from "../components/StandardPage";
+import StandardPage from "../Components/StandardPage";
 import "../styles/LoginPage.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 

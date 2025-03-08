@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import StandardPage from "../components/StandardPage";
+import StandardPage from "../Components/StandardPage";
 import DeveloperSignup from "./DeveloperSignup";
 import EntrepreneurSignup from "./EntrepreneurSignup";
 import "../styles/SignupPage.css";
@@ -23,7 +23,7 @@ const Signup: React.FC = () => {
 
   return (
     <StandardPage>
-      <h1>Create an Account</h1>
+      <div className="create"><h1>Create an Account</h1></div>
       <div className="step-indicator">
         <div className={`step step-1 ${step === 1 ? "active" : ""}`} onClick={() => setStep(1)}>Personal Info</div>
         <div className={`step step-2 ${step === 2 ? "active" : ""}`}>More Details</div>

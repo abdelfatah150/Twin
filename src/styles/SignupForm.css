@@ -38,7 +38,7 @@ input:focus, select:focus {
 
 
 /* ===== Buttons ===== */
-button {
+.signup-form-container button {
     width: 100%;
     max-width: 400px;
     margin: 15px 0;
@@ -57,7 +57,7 @@ button {
     background-color: #224f34;
 }
 
-button:hover {
+.signup-form-container button:hover {
     background-color: #1a3d27;
     transform: scale(1.02);
 }
@@ -115,7 +115,7 @@ button:hover {
     font-weight: bold;
 }
 
-h1 {
+.create h1 {
     font-size: 40px;
     font-weight: bold;
     margin: 0px;

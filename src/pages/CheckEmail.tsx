@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import StandardPage from "../components/StandardPage";
+import StandardPage from "../Components/StandardPage";
 import "../styles/CheckEmail.css";
-
 const CheckEmailPage: React.FC = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState<string | null>(null);
