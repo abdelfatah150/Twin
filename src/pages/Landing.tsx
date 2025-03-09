@@ -157,7 +157,7 @@ const Landing: React.FC = () => {
           </div>
           </div>
           <div className='space'></div>
-          <div className='terms'>
+          <div className='terms-and-conditions'>
           <div className='copy-right'><p>© 2025 Twin. All rights reserved.</p></div>
           <div className='copy-right'><p>Terms & Conditions</p></div>
           </div>

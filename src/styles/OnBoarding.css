@@ -1,0 +1,164 @@
+.onboarding-container {
+  display: flex;
+  align-items: center; /* Common alignment */
+  height: 90vh;
+  background-color: #ffffff;
+  padding-bottom: 0%;
+}
+
+/* Specific styles for each container */
+.container1 {
+  justify-content: flex-start;
+  padding-left: 0;
+}
+
+.container2 {
+  justify-content: flex-end;
+  padding-right: 0;
+}
+
+.container3 {
+  justify-content: flex-end;
+  align-items: flex-end; /* Only this one changes */
+  padding-right: 0;
+}
+  
+  .content-box1 {
+    background-color: #d1fae5;
+    padding: 50px; 
+    border-top-right-radius: 120px; 
+    border-bottom-right-radius: 32px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 60%; 
+    max-width: 900px; 
+    height: 52%;
+  }
+
+  .content-box2 {
+    background-color: #d1fae5;
+    padding: 50px; 
+    border-top-left-radius: 120px; 
+    border-bottom-left-radius: 32px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 60%; 
+    max-width: 900px; 
+    height: 52%;
+  }
+
+  .content-box3 {
+    background-color: #d1fae5;
+    padding: 48px; 
+    border-top-left-radius: 32px; 
+    border-bottom-left-radius: 120px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 60%; 
+    max-width: 900px; 
+    height: 53%;
+  }
+
+
+  
+  .title {
+    font-family:'Konkhmer Sleokchher';
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: #111111;
+    margin-top: 0%;
+  }
+  
+  .description {
+    font-family: 'Konkhmer Sleokchher';
+    margin-top: 30px;
+    color: #000000b0;
+    line-height: 1.6;
+    font-size: 1.2rem;
+    
+}
+
+  
+  .learn-more {
+    margin-top: 20px;
+    background-color: #224F34;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+  }
+  
+  .learn-more:hover {
+    background-color: #047857;
+  }
+  
+  .dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 8px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #d1d5db;
+    border-radius: 50%;
+  }
+  
+  .dot.active {
+    background-color: #55b166;
+  }
+  
+  .button-dots-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 33%;
+    margin-top: 30px;
+  }
+    
+  .image-container-welcome {
+      position: absolute;
+      bottom: 0px; 
+      right: 0px;
+      left: 61%; 
+      width: 30%; 
+      height: auto;
+  }
+
+  .image-container-welcome img {
+      width: 100%;
+      height: auto;
+  }
+
+  .image-container-developer {
+    position: absolute;
+    bottom: 0px; 
+    right: 0px;
+    left: 11%; 
+    width: 30%; 
+    height: auto;
+  }
+
+  .image-container-developer img {
+    width: 100%;
+    height: auto;
+  }
+
+  .image-container-entrepreneurs {
+    position: absolute;
+    top: 0px; 
+    right: 0px;
+    left: 8%; 
+    width: 30%; 
+    height: auto;
+  }
+
+  .image-container-entrepreneurs img {
+    width: 100%;
+    height: auto;
+  }
