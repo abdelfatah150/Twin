@@ -38,7 +38,7 @@ namespace TwinBackend.Service.Security
             }
 
             var authKey = _configuration["Jwt:Key"];
-            var keyBytes = Convert.FromBase64String(authKey);
+            var keyBytes = Encoding.UTF8.GetBytes(authKey);
             var securityKey = new SymmetricSecurityKey(keyBytes);
 
             var token = new JwtSecurityToken

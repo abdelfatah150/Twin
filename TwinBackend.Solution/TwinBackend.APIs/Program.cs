@@ -12,6 +12,8 @@ using TwinBackend.Repository.Data.Repositories;
 using TwinBackend.Service.Services;
 using TwinBackend.Service.HelperServices;
 using MailKit;
+using Org.BouncyCastle.Asn1.X509.Qualified;
+using TwinBackend.Service.Security;
 
 namespace TwinBackend.APIs
 {
@@ -72,8 +74,10 @@ namespace TwinBackend.APIs
             builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRespository<>));
             builder.Services.AddScoped<TechnicalTestService,TechnicalTestService>();
             builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
-            builder.Services.AddScoped<MailService>();
+            builder.Services.AddScoped<TwinBackend.Service.MainServices.MailService>();
             builder.Services.AddAutoMapper(typeof(MappedProfile));
+            builder.Services.AddScoped(typeof(IJwtService), typeof(JwtService));
+            builder.Services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
 
             builder.Services.AddAuthorization();
 

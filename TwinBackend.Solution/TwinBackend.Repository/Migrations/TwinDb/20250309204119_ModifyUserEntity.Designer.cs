@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TwinBackend.Repository.Data;
 
@@ -11,9 +12,11 @@ using TwinBackend.Repository.Data;
 namespace TwinBackend.Repository.Migrations.TwinDb
 {
     [DbContext(typeof(TwinDbContext))]
-    partial class TwinDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250309204119_ModifyUserEntity")]
+    partial class ModifyUserEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,7 +33,7 @@ namespace TwinBackend.Repository.Migrations.TwinDb
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<double?>("AvgTasksRating")
+                    b.Property<double>("AvgTasksRating")
                         .HasColumnType("float");
 
                     b.Property<DateOnly?>("BirthDate")
@@ -45,6 +48,7 @@ namespace TwinBackend.Repository.Migrations.TwinDb
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("GithubLink")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsConfirmed")
@@ -59,7 +63,7 @@ namespace TwinBackend.Repository.Migrations.TwinDb
                     b.Property<int>("RejectedOffersCounter")
                         .HasColumnType("int");
 
-                    b.Property<double?>("SkillTestScore")
+                    b.Property<double>("SkillTestScore")
                         .HasColumnType("float");
 
                     b.Property<bool>("isActive")

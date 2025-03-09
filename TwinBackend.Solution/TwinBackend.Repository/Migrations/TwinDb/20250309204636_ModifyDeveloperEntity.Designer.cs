@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TwinBackend.Repository.Data;
 
@@ -11,9 +12,11 @@ using TwinBackend.Repository.Data;
 namespace TwinBackend.Repository.Migrations.TwinDb
 {
     [DbContext(typeof(TwinDbContext))]
-    partial class TwinDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250309204636_ModifyDeveloperEntity")]
+    partial class ModifyDeveloperEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

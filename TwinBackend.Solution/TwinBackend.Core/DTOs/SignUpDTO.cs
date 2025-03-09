@@ -19,11 +19,10 @@ namespace TwinBackend.Core.DTOs
         public string ConfirmPassword { get; set; }
         [Required]
         public string FullName { get; set; }
-        [Required]
-        public string Field { get; set; }
-        [Required]
-        public string Track { get; set; }
-        [Required]
-        public DateOnly BirthDate { get; set; }
+        public string? Field { get; set; }
+        public List<string>? Tracks { get; set; }
+        public List<string> DeveloperSkills { get; set; }
+        //[Required]
+        //public DateOnly BirthDate { get; set; }
     }
 }
