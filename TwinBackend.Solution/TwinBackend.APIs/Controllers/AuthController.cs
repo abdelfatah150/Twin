@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using TwinBackend.Service.MainServices;
 
 namespace TwinBackend.APIs.Controllers
 {
@@ -10,12 +11,14 @@ namespace TwinBackend.APIs.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly IJwtService _jwtService;
+        private readonly MailService _mailService;
 
-        public AuthController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IJwtService jwtService)
+        public AuthController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IJwtService jwtService, MailService mailService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _jwtService = jwtService;
+            _mailService = mailService;
         }
 
         [HttpPost("Register")]
@@ -77,6 +80,16 @@ namespace TwinBackend.APIs.Controllers
             //    userName = check.UserName,
             //    token = await _jwtService.CreateTokenAsync(check, _userManager, 2)
             //});
+        }
+
+        [HttpGet("sendemail")]
+        public async Task<ActionResult> SendEmail()
+        {
+            var email = "markayman453@gmail.com";
+            var subject = "testing";
+            var body = "testing testing alo alo";
+            _mailService.sendEmail(email,subject,body);
+            return Ok();
         }
     }
 }

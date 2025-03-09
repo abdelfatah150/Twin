@@ -10,6 +10,8 @@ using TwinBackend.Core.Repositories.Contract;
 using TwinBackend.Repository.Data;
 using TwinBackend.Repository.Data.Repositories;
 using TwinBackend.Service.Services;
+using TwinBackend.Service.HelperServices;
+using MailKit;
 
 namespace TwinBackend.APIs
 {
@@ -69,6 +71,8 @@ namespace TwinBackend.APIs
 
             builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRespository<>));
             builder.Services.AddScoped<TechnicalTestService,TechnicalTestService>();
+            builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
+            builder.Services.AddScoped<MailService>();
             builder.Services.AddAutoMapper(typeof(MappedProfile));
 
             builder.Services.AddAuthorization();
