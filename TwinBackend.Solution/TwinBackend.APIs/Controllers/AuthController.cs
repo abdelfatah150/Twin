@@ -6,6 +6,7 @@ using System.Net;
 using System.Text;
 using TwinBackend.Core.Entities;
 using TwinBackend.Service.MainServices;
+using TwinBackend.Service.HelperServices;
 
 namespace TwinBackend.APIs.Controllers
 {
@@ -182,5 +183,50 @@ namespace TwinBackend.APIs.Controllers
             await _signInManager.SignOutAsync();
             return Ok();
         }
+    
+        [HttpPost("ForgetPassword")]
+
+        public async Task<ActionResult> ForgetPassword(ForgetPasswordDTO forgetPasswordDTO){
+
+            var user = await _userManager.FindByEmailAsync(forgetPasswordDTO.Email);
+            if (user == null || user.EmailConfirmed == false)
+                return BadRequest("Email not confirmed or user not found");
+
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+
+            _mailService.sendEmail(forgetPasswordDTO.Email, "ResetPassword", $"Your reset token : {token}");
+            return Ok("Reset Password link has been sent to your email.");
+        }
+
+        [HttpPost("VerifyResetToken")]
+
+        public async Task<ActionResult> VerifyResetToken(VerifyResetTokenDTO verifyResetTokenDTO){
+
+            var user = await _userManager.FindByIdAsync(verifyResetTokenDTO.UserId);
+            if (user == null)
+                return NotFound("User not found.");
+
+            var isValid = await _userManager.VerifyUserTokenAsync(user, TokenOptions.DefaultProvider, "ResetPassword", verifyResetTokenDTO.Token);
+            
+            if (!isValid)
+                return BadRequest("Invalid or expired token.");
+
+            return Ok("Token is valid. You can now reset your password.");
+        }
+
+        [HttpPost("ResetPassword")]
+
+        public async Task<ActionResult> ResetPassword(ResetPasswordDTO resetPasswordDTO){
+
+            var user = await _userManager.FindByIdAsync(resetPasswordDTO.UserId);
+            if (user == null)
+                return NotFound("User not found.");
+
+            var result = await _userManager.ResetPasswordAsync(user, resetPasswordDTO.Token, resetPasswordDTO.NewPassword);
+            if (result.Succeeded)
+                return Ok("Password has been reset successfully.");
+
+            return BadRequest(result.Errors);
+                }
     }
 }
