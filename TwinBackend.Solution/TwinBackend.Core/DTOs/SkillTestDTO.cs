@@ -4,6 +4,5 @@
     {
         //public string Track {  get; set; }
         public List<string> Skills { get; set; } = new List<string>();
-
     }
-}
+}   
