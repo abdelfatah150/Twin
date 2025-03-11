@@ -151,9 +151,10 @@ namespace TwinBackend.APIs.Controllers
                 return Unauthorized("Email Not Confirmed");
             }
 
-            string originalToken = await _jwtService.CreateTokenAsync(check, _userManager, 2);
+            var (originalToken, refreshToken) = await _jwtService.CreateTokenAsync(check, _userManager, 2);
 
             Response.Headers.Append("Authorization", $"Bearer {originalToken}");
+            Response.Headers.Append("X-Refresh-Token", $"{refreshToken}");
 
             return Ok(new
             {
@@ -183,6 +184,16 @@ namespace TwinBackend.APIs.Controllers
             await _signInManager.SignOutAsync();
             return Ok();
         }
+
+
+        [HttpPost("RefreshToken")]
+        public async Task<ActionResult> RefreshToken(RefreshTokenDTO model)
+        {
+            var token = await _jwtService.RefreshTokenAsync(model.Token, model.RefreshToken, _userManager);
+            Response.Headers.Append("Authorization", $"Bearer {token}");
+            return Ok("Token Refreshed");
+        }
+
     
         [HttpPost("ForgetPassword")]
 
@@ -228,5 +239,6 @@ namespace TwinBackend.APIs.Controllers
 
             return BadRequest(result.Errors);
                 }
+
     }
 }

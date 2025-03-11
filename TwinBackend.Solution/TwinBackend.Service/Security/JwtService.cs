@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using TwinBackend.Core.Entities;
@@ -21,7 +22,7 @@ namespace TwinBackend.Service.Security
         {
             _configuration = configuration;
         }
-        public async Task<string> CreateTokenAsync(AppUser user, UserManager<AppUser> userManager, int Id)
+        public async Task<(string, string)> CreateTokenAsync(AppUser user, UserManager<AppUser> userManager, int Id)
         {
             //Private Claims[User Information]
             var authClaims = new List<Claim>()
@@ -49,8 +50,26 @@ namespace TwinBackend.Service.Security
                 claims:authClaims,
                 signingCredentials: new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature)
                 );
+            string writtenToken = new JwtSecurityTokenHandler().WriteToken(token);
+            string refreshToken = GenerateRefreshToken();
 
-            return new JwtSecurityTokenHandler().WriteToken(token);
+            return (writtenToken, refreshToken);
+        }
+
+        private string GenerateRefreshToken()
+        {
+            var randomNumber = new byte[32]; // 32 bytes = 256-bit token
+            using (var rng = RandomNumberGenerator.Create())
+            {
+                rng.GetBytes(randomNumber);
+            }
+            return Convert.ToBase64String(randomNumber);
+        }
+
+
+        Task<string> IJwtService.RefreshTokenAsync(string token, string refreshToken, UserManager<AppUser> userManager)
+        {
+            throw new NotImplementedException();
         }
     }
 }
