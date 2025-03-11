@@ -7,6 +7,7 @@ using System.Text;
 using TwinBackend.Core.Entities;
 using TwinBackend.Service.MainServices;
 using TwinBackend.Service.HelperServices;
+using System.Security.Claims;
 
 namespace TwinBackend.APIs.Controllers
 {
@@ -20,8 +21,9 @@ namespace TwinBackend.APIs.Controllers
         private readonly MailService _mailService;
         private readonly IUnitOfWork unitOfWork;
         private readonly LinkGenerator _linkGenerator;
+        private readonly ICacheService _cacheService;
 
-        public AuthController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IJwtService jwtService, MailService mailService, IUnitOfWork unitOfWork, LinkGenerator linkGenerator)
+        public AuthController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IJwtService jwtService, MailService mailService, IUnitOfWork unitOfWork, LinkGenerator linkGenerator, ICacheService cacheService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -29,6 +31,7 @@ namespace TwinBackend.APIs.Controllers
             _mailService = mailService;
             this.unitOfWork = unitOfWork;
             _linkGenerator = linkGenerator;
+            _cacheService = cacheService;
         }
 
         [HttpPost("Register")]
@@ -151,10 +154,12 @@ namespace TwinBackend.APIs.Controllers
                 return Unauthorized("Email Not Confirmed");
             }
 
-            var (originalToken, refreshToken) = await _jwtService.CreateTokenAsync(check, _userManager, 2);
+            var (originalToken, refreshToken) = await _jwtService.CreateTokenAsync(check, _userManager);
 
             Response.Headers.Append("Authorization", $"Bearer {originalToken}");
             Response.Headers.Append("X-Refresh-Token", $"{refreshToken}");
+
+            await _cacheService.CacheData(check.Email, refreshToken, TimeSpan.FromDays(7));
 
             return Ok(new
             {
@@ -180,6 +185,8 @@ namespace TwinBackend.APIs.Controllers
         [HttpPost("SignOut")]
         public async Task<ActionResult> SignOut()
         {
+            var email = User.FindFirst(ClaimTypes.Email)?.Value;
+            await _cacheService.DeleteCacheData(email);
             Response.Headers.Append("Authorization", "");
             await _signInManager.SignOutAsync();
             return Ok();
@@ -189,7 +196,9 @@ namespace TwinBackend.APIs.Controllers
         [HttpPost("RefreshToken")]
         public async Task<ActionResult> RefreshToken(RefreshTokenDTO model)
         {
-            var token = await _jwtService.RefreshTokenAsync(model.Token, model.RefreshToken, _userManager);
+            var email = User.FindFirst(ClaimTypes.Email)?.Value;
+            var (token, refreshed) = await _jwtService.RefreshTokenAsync(model.Token, model.RefreshToken, _userManager,email);
+            Response.Headers.Append("X-Refresh-Token", $"{refreshed}");
             Response.Headers.Append("Authorization", $"Bearer {token}");
             return Ok("Token Refreshed");
         }

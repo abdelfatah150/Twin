@@ -17,18 +17,20 @@ namespace TwinBackend.Service.Security
     public class JwtService : IJwtService
     {
         private readonly IConfiguration _configuration;
+        private readonly ICacheService _cacheService;
 
-        public JwtService(IConfiguration configuration)
+        public JwtService(IConfiguration configuration, ICacheService cacheService)
         {
             _configuration = configuration;
+            _cacheService = cacheService;
         }
-        public async Task<(string, string)> CreateTokenAsync(AppUser user, UserManager<AppUser> userManager, int Id)
+        public async Task<(string, string)> CreateTokenAsync(AppUser user, UserManager<AppUser> userManager)
         {
             //Private Claims[User Information]
             var authClaims = new List<Claim>()
             {
                 new Claim(ClaimTypes.Email, user.Email),
-                new Claim("userId",Id.ToString())
+
             };
 
             var userRoles = await userManager.GetRolesAsync(user);
@@ -47,7 +49,7 @@ namespace TwinBackend.Service.Security
                 audience: _configuration["Jwt:Audience"],
                 issuer: _configuration["Jwt:Issuer"],
                 expires: DateTime.Now.AddDays(double.Parse(_configuration["Jwt:ExpiryDays"])),
-                claims:authClaims,
+                claims: authClaims,
                 signingCredentials: new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature)
                 );
             string writtenToken = new JwtSecurityTokenHandler().WriteToken(token);
@@ -67,9 +69,65 @@ namespace TwinBackend.Service.Security
         }
 
 
-        Task<string> IJwtService.RefreshTokenAsync(string token, string refreshToken, UserManager<AppUser> userManager)
+        public async Task<(string, string)> RefreshTokenAsync(string token, string refreshToken, UserManager<AppUser> userManager, string email)
         {
-            throw new NotImplementedException();
+            var result = _cacheService.GetCachedData(email);
+            if (result == null)
+            {
+                throw new Exception();
+            }
+            else
+            {
+                var RemainingTime = await _cacheService.CheckLifeTime(email);
+                if (RemainingTime.HasValue)
+                {
+                    //StringBuilder newRefereshed = new StringBuilder("");
+                    if (RemainingTime.Value < TimeSpan.FromDays(1))
+                    {
+                        refreshToken = GenerateRefreshToken();
+                        await _cacheService.CacheData(email, refreshToken, TimeSpan.FromDays(7));
+                    }
+                    var newToken = RenewToken(token);
+                    return (newToken, refreshToken);
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+        }
+
+        public string RenewToken(string expiredToken)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]);
+
+            // Read the expired token (without validating expiration)
+            var tokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(key),
+                ValidateIssuer = false,
+                ValidateAudience = false,
+                ValidateLifetime = false // Ignore expiration for now
+            };
+
+            SecurityToken securityToken;
+            var principal = tokenHandler.ValidateToken(expiredToken, tokenValidationParameters, out securityToken);
+
+            // Extract claims from the expired token
+            var claims = principal.Claims.ToList();
+
+            // Generate a new token with a fresh expiration time
+            var newTokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(claims),
+                Expires = DateTime.UtcNow.AddMinutes(30), // New expiration time
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+
+            var newToken = tokenHandler.CreateToken(newTokenDescriptor);
+            return tokenHandler.WriteToken(newToken);
         }
     }
 }

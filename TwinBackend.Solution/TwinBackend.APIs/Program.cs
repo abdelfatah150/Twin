@@ -14,6 +14,7 @@ using TwinBackend.Service.HelperServices;
 using MailKit;
 using Org.BouncyCastle.Asn1.X509.Qualified;
 using TwinBackend.Service.Security;
+using StackExchange.Redis;
 
 namespace TwinBackend.APIs
 {
@@ -78,6 +79,15 @@ namespace TwinBackend.APIs
             builder.Services.AddAutoMapper(typeof(MappedProfile));
             builder.Services.AddScoped(typeof(IJwtService), typeof(JwtService));
             builder.Services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
+
+            builder.Services.AddSingleton<IConnectionMultiplexer>((ServiceProvider) =>
+            {
+                var connection = builder.Configuration.GetConnectionString("Redis");
+                return ConnectionMultiplexer.Connect(connection);
+            }
+            );
+
+            builder.Services.AddSingleton<ICacheService, CacheService>();
 
             builder.Services.AddAuthorization();
 
