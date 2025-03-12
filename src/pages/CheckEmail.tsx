@@ -47,7 +47,7 @@ const CheckEmailPage: React.FC = () => {
           <p className="email-text">Your email has been verified.</p>
           <div className="checkmark">✔</div>
           <button className="login-btn" onClick={() => handleContinue()}>
-            {userRole === "developer" ? "Start Your Developer Test" : "Go to Login"}
+            {userRole === "developer" ? "Start Your Test" : "Go to Login"}
           </button>
         </div>
       ) : (
