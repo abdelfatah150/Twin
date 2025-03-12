@@ -9,6 +9,7 @@ using TwinBackend.Service.MainServices;
 using TwinBackend.Service.HelperServices;
 using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
+using TwinBackend.Core.Specifications.DeveloperSpec;
 
 namespace TwinBackend.APIs.Controllers
 {
@@ -143,6 +144,22 @@ namespace TwinBackend.APIs.Controllers
                 return BadRequest("No Account With This Email");
             }
 
+            var devRepo = unitOfWork.Repository<Developer>();
+            var devParams = new DeveloperSpecParams()
+            {
+                Email = model.Email,
+            };
+            var devSpec = new DeveloperSpecifications(devParams);
+            var dev = devRepo.GetAllSpecAsync(devSpec);
+
+            foreach (var developer in dev)
+            {
+                if (!developer.IsConfirmed)
+                {
+                    return BadRequest("You Should Take Technical Test Before Log In");
+                }
+            }
+
             var result = await _signInManager.CheckPasswordSignInAsync(check,model.Password,false);
 
             if (result.Succeeded is false)
@@ -186,9 +203,9 @@ namespace TwinBackend.APIs.Controllers
         [HttpPost("SignOut")]
         public async Task<ActionResult> SignOut()
         {
-
+            var token = Request.Headers.Authorization.ToString().Split(" ")[1];
             var tokenHandler = new JwtSecurityTokenHandler();
-            var parse = tokenHandler.ReadJwtToken(Request.Headers.Authorization);
+            var parse = tokenHandler.ReadJwtToken(token);
             if (parse == null)
             {
                 return Unauthorized();
@@ -256,7 +273,7 @@ namespace TwinBackend.APIs.Controllers
                 return Ok("Password has been reset successfully.");
 
             return BadRequest(result.Errors);
-                }
+        }
 
     }
 }
