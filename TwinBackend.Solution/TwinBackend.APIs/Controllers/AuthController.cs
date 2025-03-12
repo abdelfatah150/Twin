@@ -8,6 +8,7 @@ using TwinBackend.Core.Entities;
 using TwinBackend.Service.MainServices;
 using TwinBackend.Service.HelperServices;
 using System.Security.Claims;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace TwinBackend.APIs.Controllers
 {
@@ -185,7 +186,15 @@ namespace TwinBackend.APIs.Controllers
         [HttpPost("SignOut")]
         public async Task<ActionResult> SignOut()
         {
-            var email = User.FindFirst(ClaimTypes.Email)?.Value;
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var parse = tokenHandler.ReadJwtToken(Request.Headers.Authorization);
+            if (parse == null)
+            {
+                return Unauthorized();
+            }
+
+            var email = parse.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
             await _cacheService.DeleteCacheData(email);
             Response.Headers.Append("Authorization", "");
             await _signInManager.SignOutAsync();

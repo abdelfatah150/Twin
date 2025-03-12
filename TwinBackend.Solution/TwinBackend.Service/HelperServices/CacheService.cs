@@ -33,8 +33,8 @@ namespace TwinBackend.Service.HelperServices
 
         public async Task<bool> DeleteCacheData(string CacheKey)
         {
-            var result = await _database.StringGetDeleteAsync(CacheKey);
-            if (result.IsNull) return false;
+            var result = await _database.KeyDeleteAsync(CacheKey);
+            if (result == false) return false;
             return true;
         }
 
