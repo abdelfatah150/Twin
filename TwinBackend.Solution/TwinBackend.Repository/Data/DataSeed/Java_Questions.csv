@@ -1,0 +1,505 @@
+Title,Level,Correct_Answer,Category,Choice_1,Choice_2,Choice_3,Choice_4
+"public class MyClass {
+public static void main(String[] args){
+ int a = 10;
+ System.out.println(a++++);
+}
+}",Practitioner, D,Java,11,12,13,Compilation Error
+"public class CppBuzz{
+public static void main(String[] args){
+  int a = 10;
+  System.out.println(a++);
+  a++;
+}
+}",Beginner, A,Java,10,11,12,13
+"public class CppBuzz {
+public static void main(String[] args){
+ int a = 10;
+ System.out.println(a*a++);
+}
+}",Beginner, A,Java,100,110,121,Compilation Error
+"public class CppBuzz {
+public static void main(String[] args){
+ int a = 10;
+ System.out.println(a++*a++);
+}
+}",Beginner, B,Java,100,110,121,144
+"public class CppBuzz {
+public static void main(String[] args){
+ int a = 10;
+ System.out.println(++a*a++);
+}
+}",Beginner, A,Java,121,132,144,100
+"public class CppBuzz {
+public static void main(String[] args){
+ int a = 10;
+ System.out.println(++a*++a);
+}
+}",Beginner, C,Java,121,144,132,100
+"public class CppBuzz {
+public static void main(String[] args){
+ int a = 10;
+ System.out.println(a*a--);
+}
+}",Beginner, A,Java,100,90,81,80
+"public class CppBuzz {
+public static void main(String[] args){
+ int a = 10;
+ System.out.println(a--*a--);
+}
+}",Beginner, B,Java,100,90,99,72
+"public class CppBuzz {
+public static void main(String[] args){
+ int a = 5+5*2+2*2+(2*3);
+ System.out.println(a);
+}
+}",Beginner, D,Java,138,264,41,25
+Which of the following operators has more precedance in Java?,Beginner, C,Java,-,+,*,<->
+Which of the following is not an operator in Java?,Beginner, D,Java,|,^,~,Zero Fill Left Shift
+What do you mean by >>> operator in Java,Expert, C,Java,Left Shift Operator,Right Shift Operator,Zero Fill Right Shift,>=
+Which of the following operator has more precedence?,Beginner, A,Java,(),++,*,++
+Which one of the following is an Unary operator in Java?,Beginner, D,Java,(),*,+,+=
+Which one of the following is Equality operator in Java?,Beginner, C,Java,>=,<=,!=,We can't create reference variables of Local variables
+Select Odd one out from these about local variables,Beginner, D,Java,"Local variables are declared in methods, constructors, or blocks","Local variables are created when the method, constructor or block is entered","the variable will be destroyed once it exits the method, constructor, or block",All of these
+On which platforms Java runs?,Beginner, D,Java,Windows,Mac OS,UNIX,class
+Java is case sensitive langauge,Beginner, A,Java,TRUE,FALSE,long,0
+Java program processing always starts with main() method,Beginner, A,Java,TRUE,FALSE,1,2
+"The main() method of an application has to be public. Otherwise, it could not be called by a Java interpreter. Is that true?",Beginner, A,Java,TRUE,FALSE,3,2
+Java supports both Primitive & Non-Primitive(User Defined) datatypes. Which one of the following is not a primitive datatype?,Beginner, D,Java,byte,short,3,4
+"How many times 'Hello' is printed?
+
+public class CppBuzz {
+public static void main(String[] args){
+ for(int i = 0; i<5; i++)
+ {
+ System.out.println(""Hello"");
+ break;
+ }
+}
+}",Beginner, C,Java,5,4,3,3
+"How many times 'Hello' is printed?
+
+public class CppBuzz {
+public static void main(String[] args){
+ for(int i = 0; i<5; i++)
+ {
+ System.out.println(""Hello"");
+ i++;
+ }
+}
+}",Beginner, C,Java,5,4,2,Infinite times
+"How many times 'Hello' is printed?
+
+public class CppBuzz {
+public static void main(String[] args){
+ for(int i = 0; i<5; i++)
+ {
+ System.out.println(""Hello"");
+ i++;
+ i--;
+ }
+}
+}",Practitioner, A,Java,5,4,2,0
+"How many times 'Hello' is printed?
+
+public class CppBuzz {
+public static void main(String[] args){
+ for(int i = 0; i<5; i++)
+ {
+ System.out.println(""Hello"");
+ i+=2;
+ }
+}
+}",Practitioner, B,Java,1,2,3,1
+"public class CppBuzz {
+public static void main(String[] args){
+ for(int i = 0; i<5; i+=2)
+ {
+ System.out.println(""Hello"");
+ i+=2;
+ }
+}
+}",Practitioner, C,Java,0,1,2,Compilation Error
+"How many times 'Hello' is printed?
+
+public class CppBuzz {
+public static void main(String[] args){
+ for(int i = 0; i<5; )
+ {
+ System.out.println(""Hello"");
+ }
+}
+}",Practitioner, D,Java,0,1,0,Compilation Error
+"How many times 'Hello' is printed?
+
+public class CppBuzz {
+public static void main(String[] args){
+ for(int i = 0; i>5; )
+ {
+  System.out.println(""Hello"");
+ }
+}
+}",Practitioner, D,Java,5,4,510,Compilation Error
+"How many times 'Hello' is printed?
+
+public class CppBuzz {
+public static void main(String[] args){
+ for(int i = 0; i<5; i=5 )
+ {
+  System.out.println(""Hello"");
+ }
+}
+}",Practitioner, D,Java,5,4,5100,100
+"public class CppBuzz{
+  
+public static void main(String[] args){
+  
+  int a = 5;
+  a +=5;
+  
+  switch(a){
+   
+    case 5: System.out.println(""5"");break;
+    case 10: System.out.println(""10"");break;
+    default: System.out.println(""0"");
+    
+  }
+  
+}
+}",Beginner, B,Java,5,10,5100,0
+"public class CppBuzz{
+  
+public static void main(String[] args){
+  
+  int a = 0;
+  a +=5;
+  
+  switch(a){
+   
+    case 5: System.out.print(""5"");
+    case 10: System.out.print(""10"");break;
+    default: System.out.print(""0"");
+    
+  }
+  
+}
+}",Practitioner, C,Java,5,10,100,100
+"public class CppBuzz{
+  
+public static void main(String[] args){
+  
+  int a = 0;
+  a +=5;
+  
+  switch(a){
+   
+    case 5: System.out.print(""5"");
+    case 10: System.out.print(""10"");
+    default: System.out.print(""0"");
+    
+  }
+  
+}
+}",Expert, C,Java,5,510,5100,10-odd
+"public class CppBuzz{
+  
+public static void main(String[] args){
+  
+  int a = 0;
+  a +=5;
+  
+  switch(a){
+   
+    case 5: System.out.print(""5"");break;
+    case 10: System.out.print(""10"");
+    default: System.out.print(""0"");
+    
+  }
+  
+}
+}",Expert, A,Java,5,510,10-even-0,10-even-0
+"public class CppBuzz{
+  
+public static void main(String[] args){
+  
+  int a = -5;
+  a +=5;
+  
+  switch(a){
+   
+    case 5: System.out.print(""5"");break;
+    case 10: System.out.print(""10"");
+    default: System.out.print(""0"");
+    
+  }
+  
+}
+}",Practitioner, D,Java,5,10,10-odd-,nothing is printed
+"public class CppBuzz{
+  
+public static void main(String[] args){
+  
+  int a = 5;
+  a +=5;
+  
+  switch(a){
+   
+    case 5: System.out.print(""5"");break;
+    case 10: System.out.print(""10"");
+    default: System.out.print(""0"");
+    
+  }
+  
+}
+}",Expert, D,Java,10,510,Length not in 5-10,1010
+"public class CppBuzz{
+  
+public static void main(String[] args){
+  
+  int a = 5;
+  a +=5;
+  
+ 
+  
+  switch(a){
+   
+    case 5: System.out.print(""5"");break;
+    case 10: System.out.print(""10"");
+             System.out.println(((a%2 ==0) ? ""-even-"" : ""-odd-""));  
+             break;
+
+    default: System.out.print(""0"");
+    
+  }
+  
+}
+}",Expert, B,Java,Compilation Error,10-even-,20,Compilation Error
+"public class CppBuzz{
+  
+public static void main(String[] args){
+  
+  int a = 5;
+  a +=5;
+  
+  switch(a){
+   
+    case 5: System.out.print(""5"");break;
+    case 10: System.out.print(""10"");
+             System.out.print(((a%2 ==0) ? ""-even-"" : ""-odd-""));  
+    default: System.out.print(""0"");
+    
+  }
+  
+}
+}",Expert, D,Java,Compilation Error,10-even-,1010,Undefined
+"import java.util.Scanner;
+
+public class CppBuzz{
+  
+public static void main(String[] args){
+  
+  String name;
+  
+  Scanner sc = new Scanner(System.in);
+  System.out.println(""Enter your name : "");
+  name = sc.nextLine(); //assume if user enters 'cppbuzz'
+  
+  switch(name.length()){
+   
+    case 5: 
+    case 6:
+    case 7:
+    case 8:
+    case 9:
+    case 10: System.out.print(""Length is  5-10""); break;
+    default: System.out.print(""Length not in 5-10"");
+    
+  }
+  
+}
+}",Practitioner, B,Java,Compilation Error,Length is 5-10,Compilation Error,Compilation Error
+"public class CppBuzz {
+
+public static void main(String args[]) {
+       
+       int a =10;
+       String b = ""10"";
+      
+       System.out.println(a+b);
+      
+    }
+}",Practitioner, D,Java,"10""10""",Compilation Error,10-Oct,1010+10
+"public class CppBuzz {
+
+public static void main(String args[]) {
+       
+       int a =10;
+       String b = ""10"";
+      
+       System.out.println(a-b);
+      
+    }
+}",Practitioner, D,Java,10-Oct,0,10+10+10,Java Virtual Machine
+"public class CppBuzz {
+
+public static void main(String args[]) {
+       
+       int a =10;
+       String b = ""10"";
+      
+       System.out.println(b+a);
+      
+    }
+}",Practitioner, B,Java,10+10,1010,Byte Code Verifier,None of the above
+"public class CppBuzz {
+
+public static void main(String args[]) {
+       
+       int a =10;
+       String b = ""-10"";
+      
+       System.out.println(a+b);
+      
+    }
+}",Expert, C,Java,0,"10""-10""",Editing -> Compilation -> Bytecode Verifier -> Class Loader ->  Execution,compilation Error
+"public class CppBuzz {
+
+public static void main(String args[]) {
+       
+       int a =10;
+       String b = ""10+10"";
+      
+       System.out.println(a+b);
+      
+    }
+}",Expert, D,Java,30,1020,fr,135
+"Java has 5 phases, Editing, Compilation, Loading, Verification & Execution. Which of the following unit is responsible for execution?",Beginner, D,Java,Compiler,Class Loader,124,Infinite times
+What is correct sequence of execution of any Java  program?,Beginner, A,Java,Editing -> Compilation -> Class Loader -> Bytecode Verifier -> Execution,Editing -> Bytecode Verifier -> Compilation -> Class Loader ->  Execution,1,0
+"package com.google.test;
+import java.util.Scanner;
+
+public class ExampleIfElse {
+
+public static void main(String[] args){
+
+  String s = ""friends"";
+  int x = 0;
+ 
+do {
+  System.out.print(s.charAt(x));
+  x++ ;
+ } while (x < 2);
+
+}
+
+}",Beginner, C,Java,friends,friend,1,14385
+Arrays is a group of similar type of datatype,Beginner, A,Java,TRUE,FALSE,22222,65 66 67 68 69
+Java supports single-line and multi-line comments very similar to C and C++,Beginner, A,Java,TRUE,FALSE,97 98 99 100 101,None of the above
+"public class Main
+{
+public static void main(String[] args) {
+
+               int arr[] = {1,2,3,4,5};
+	    
+		for(int i = 0 ; i<5; i++){ 
+                   System.out.print(arr[i++]);
+		}
+	}
+}",Beginner, D,Java,12345,123,65 66 67 68 69,Some Garbage Value
+"public class Main
+{
+public static void main(String[] args) {
+	    int arr[] = {1,2,3,4,5};
+	    
+		for(int i = 0 ; i<5; ){
+		    System.out.print(arr[i]);
+		}
+	}
+}",Beginner, D,Java,12345,Nothing is printed,Compilation Error,Garbage Value
+"public class Main
+{
+public static void main(String[] args) {
+
+	    int arr[] = {1,2,3,4,5};
+
+	    int count = 0;
+
+		for(int i = 0 ; i<5; i++ ){
+		    if(arr[i]%2==0)
+		        count++;
+		}
+		System.out.print(count);
+	}
+}",Beginner, B,Java,3,2,-10,0
+"public class Main
+{
+public static void main(String[] args) {
+	    
+            int arr[] = {1,2,3,4,5};
+	    int count = 0;
+
+		for(int i = 0 ; i<5; i++ ){
+		    if(arr[i]%2==0)
+		        arr[i] *= 2;
+		    System.out.print(arr[i]);      
+		}
+		
+	}
+}",Beginner, D,Java,12345,135,Compilation Error,
+"public class Main
+{
+public static void main(String[] args) {
+
+        int arr[] = {'a','b','c','d','e'};
+	    
+	for(int i = 0 ; i<5; i++){ 
+            System.out.print("" "" + arr[i]);
+	}
+    }
+}",Expert, C,Java,a b c d e,abcde,,
+"public class Main
+{
+public static void main(String[] args) {
+        int arr[] = {'a','b','c','d','e'};
+	    
+	for(int i = 0 ; i<5; i++){ 
+	    System.out.print("" ""+ (char)arr[i]);
+	}
+}
+}",Expert, A,Java,a b c d e,96 97 98 99 101,,
+"public class Main
+{
+public static void main(String[] args) {
+   
+     int arr[] = {'a','b','c','d','e'};
+   
+    System.out.print(arr);
+}
+}",Beginner, D,Java,abcde,6566676869,,
+"public class Main
+{
+private int a;
+public Main(){
+            a = -10;
+        }
+  
+public static void main(String[] args) {
+	Main obj = new Main();
+ 	System.out.println(obj.a);
+	}
+}",Beginner, C,Java,0,Compilation Error,,
+"public class Main
+{
+private int a;
+public Main(){
+        
+    }
+public Main(int temp){
+        a = -10;
+    }
+
+public static void main(String[] args) {
+    Main obj = new Main();
+	System.out.println(obj.a);
+}
+}",Practitioner, D,Java,-10,Undefined,,

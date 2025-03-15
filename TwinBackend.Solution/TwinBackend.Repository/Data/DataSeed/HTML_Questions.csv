@@ -1,0 +1,35 @@
+Title,Level,Correct_Answer,Category,Choice_1,Choice_2,Choice_3,Choice_4
+,,,,,,,
+Which one of the following is correct place to include .css files?,Beginner, D,HTML,Inside <script> tag,Inside <body> tag,Inside <title> tag,Inside <head> tag
+Which of the following web browser engine is used by Firefox browser?,Beginner, B,HTML,Presto,Gecko,Webkit,Trident
+Which one of the following is the first web browser?,Beginner, B,HTML,Internet Explorer,Nexus,Safari,Mosaic
+Is it mandatory to use alt attribute in  tag?,Beginner, B,HTML,Yes,No,multilinetext,html5text
+Which of the following HTML tag is used to create a text box with multiple lines?,Beginner, A,HTML,texarea,text,<h3>,<h4>
+Which of the following HTML tag is used for largest heading?,Beginner, A,HTML,<h1>,<h2>,color,backgroundcolor
+Which attribute to use to set background color to any html element?,Beginner, B,HTML,bg-color,background-color,<br>,<!--- -->
+Do html tags like  &  have same effect on text?,Beginner, A,HTML,Yes,No,right,top
+Correct HTML tag to put a blank line?,Beginner, C,HTML,</>,<br//>,<strong>,<u>
+Which of the following is invalid value of alignment attribute in HTML?,Beginner, D,HTML,justify,centre,<ul>,<li>
+Which of the following HTML tag is used for making text italic?,Beginner, B,HTML,<italic>,<i>,face,all of the above
+Which of the following HTML tag has attribute 'alt'?,Beginner, A,HTML,<img>,<hr>,4,6
+Which of the following is an attribute used in font tag?,Beginner, D,HTML,size,color,<dl>..</dl>,<ol>..</ol>
+How many heading tags we have in HTML?,Beginner, D,HTML,2,3,Uniform Resource Location,Unified Reserve Locator
+HTML tags used to display list with numbers?,Beginner, D,HTML,<li> .. </li>,<ul> ... </ul>,H6,H8
+What is the full form of URL?,Beginner, B,HTML,Unified Resource Locator,Uniform Resource Locator,<list>,All of the above
+Can we have   tag inside  tag in HTML?,Beginner, A,HTML,Yes,No,<hr>,<line>
+Which of the following is invalid heading tag in HTML?,Beginner, D,HTML,H2,H4,<meta>,None of the above
+HTML tag used to create combo box?,Beginner, B,HTML,<combo>,<select>,<html>,<script>
+Which of the following HTML tag inserts a straight horizontal line?,Beginner, C,HTML,<br>,<br/>,<th>,<tc>
+Which of the following is invalid tag in HTML?,Beginner, D,HTML,<code>,<pre>,Both A & B,None of the above
+Which of the following should be very fist tag in HTML document?,Beginner, C,HTML,<body>,<head>,//,<!--  -->
+Which of the following HTML tag is used to create a column in a table?,Beginner, B,HTML,<tr>,<td>,to split a column to more than one column,to provide spaces between two columns
+What is the extension of html �files?,Beginner, C,HTML,.html,.htm,noresize,All of the above
+Which of the following is correct syntax for commenting out the HTML code?,Beginner, D,HTML,#,'',<include>,<java-script>
+When should we use table's colspan tag?,Beginner, A,HTML,to merge two or more columns into a single column,to merge two or more rows into a single row,media independent,statteless
+Which of the following are  tag attribute?,Beginner, D,HTML,src,name,HEAD,REMOVE
+HTML tag used to include javascript files (.js) in html ?,Beginner, B,HTML,<javascript>,<script>,300–399,200–299
+The HTML  tag specifies a section that contains only navigation links.,Beginner, A,HTML,TRUE,FALSE,,
+Which of the following is not a HTTP feature?,Beginner, A,HTML,responsive,connectionless,,
+Which of the following is not a request method?,Beginner, D,HTML,GET,PUT,,
+Which of the following HTTP response status codes group is used for redirects?,Beginner, C,HTML,500–599,400–499,,
+A favicon is an small image used by the browser to identify a website.,Beginner, A,HTML,TRUE,FALSE,,

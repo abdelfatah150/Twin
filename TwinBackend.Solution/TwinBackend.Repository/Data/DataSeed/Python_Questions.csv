@@ -1,0 +1,43 @@
+Title,Level,Correct_Answer,Category,Choice_1,Choice_2,Choice_3,Choice_4
+Which statement is correct....??,Beginner, A,Python,List is mutable && Tuple is immutable,List is immutable && Tuple is mutable,Both are Immutable,Both are Mutable.
+print(chr(ord('b')+1)),Beginner, C,Python,b,syntax error,c,b+1
+"The format function, when applied on a string returns :",Beginner, D,Python,list,bool,int,str
+"The format function, when applied on a string returns :",Beginner, D,Python,list,bool,int,str
+"class test:
+   def __init__(self):
+      print ""Hello World""
+   def __init__(self):
+      print ""Bye World""
+obj=test()",Beginner, C,Python,Hello World,Compilation Error,Bye World,Ambiguity
+"a = True
+b = False
+c = True
+ 
+if not a or b:
+    print ""a""
+elif not a or not b and c:
+    print ""b""
+elif not a or b or not b and a:
+    print ""c""
+else:
+    print ""d""",Beginner, B,Python,a,b,c,d
+"a = 8.6
+b = 2
+print a//b",Beginner, B,Python,4.3,4,4,compilation error
+"If a='cpp', b='buzz' then what is the output of:
+c = a-b
+print(c)",Beginner, C,Python,cpp-buzz,cppbuzz,TypeError: unsupported operand,None of the above
+"If a='cpp', b='buzz' then which of the following operation would show 'cppbuzz' as output?",Beginner, D,Python,a+b,a+''+b,"a+""""+b",All of the above
+What is correct syntax to copy one list into another?,Practitioner, B,Python,listA = listB[],listA = listB[:],listA = listB[](),listA = listB
+How to find the last element of list in Python? Assume `bikes` is the name of list.,Beginner, B,Python,bikes[0],bikes[-1],bikes[lpos],bikes[:-1]
+Syntax of constructor in Python?,Beginner, A,Python,def __init__(),def _init_(),_init_(),All of these
+"Python allows string slicing. What is the output of below code:
+
+s='cppbuzz chicago'
+print(s[3:5])",Beginner, C,Python,pbuzz,buzzc,bu,None of these
+Which predefined Python function is used to find length of string?,Beginner, B,Python,length(),len(),strlen(),stringlength()
+Which of the following is correct way to declare string variable in Python?,Beginner, A,Python,fruit = 'banana',"fruit = ""banana""",fruit = banana,fruit = (banana)
+Which keyword is used to define methods in Python?,Beginner, B,Python,function,def,method,All of these
+Are nested if-else are allowed in Python?,Beginner, A,Python,Yes,No,/**/,#
+Which of the following symbols are used for comments in Python?,Beginner, D,Python,//,'',raise,All of these
+Select the reserved keyword in python,Beginner, D,Python,else,import,,

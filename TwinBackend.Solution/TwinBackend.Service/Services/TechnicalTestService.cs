@@ -31,7 +31,7 @@ namespace TwinBackend.Service.Services
         public IEnumerable<QuestionDTO> GenerateSkillTest(List<string> skills)
         {
             var testQuestions = new List<Question>();
-            var QuestionsPerSkill = (6 / skills.Count) + (6 % skills.Count);
+            var QuestionsPerSkill = (30 / skills.Count) + (30 % skills.Count);
             var QuestionsPerLevel = (QuestionsPerSkill / 2) + ( QuestionsPerSkill % 2);
             foreach (var skill in skills)
             {
@@ -46,7 +46,7 @@ namespace TwinBackend.Service.Services
 
                 var existingLevels = new List<string>()
                 {
-                    "Easy","Medium"
+                    "Beginner","Practitioner", "Expert"
                 };
 
                 foreach(var item in existingLevels)
@@ -55,7 +55,7 @@ namespace TwinBackend.Service.Services
                 }
             }
 
-            var temp =  testQuestions.Take(6).ToList();
+            var temp =  testQuestions.Take(30).ToList();
             var result = _mapper.Map<List<QuestionDTO>>(temp);
 
             return result;

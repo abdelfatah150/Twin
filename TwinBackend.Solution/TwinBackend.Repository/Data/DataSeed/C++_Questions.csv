@@ -1,0 +1,1031 @@
+Title,Level,Correct_Answer,Category,Choice_1,Choice_2,Choice_3,Choice_4
+How many loops are there in C++ 98?,Beginner, B,C++,2,3,4,1
+"//What is the output of below C++ program?
+
+#include 
+
+int main()
+{
+ if(0)
+ {
+    std::cout<<""Hi"";
+ }
+ else
+ {
+    std::cout<<""Bye"";
+ }
+return 0;
+}",Beginner, B,C++,Hi,Bye,HiBye,Compilation Error
+"What following operator is called 
+?: in C++?",Beginner, C,C++,Scope Resolution Operator,Conditional Operator,Ternary Operator,if else o/p
+What is size of int data type in C++?,Beginner, D,C++,2 Bytes,4 Bytes,1 Byte,Depends on Compiler
+Which operator can not be overloaded in C++?,Beginner, D,C++,+,-,*,::
+Which operator has highest precedence in below list in C++?,Beginner, C,C++,+,-,++,*
+"//What should be the output of below C++ program?
+
+#include
+
+int main()
+{
+int a=10; 
+std::cout<(A) 11(B) 10(C) Error(D) 0 B  CompilerBeginneroperators in C++",Beginner, B,C++,11,10,Error,0
+Can we typecast void * into int * in C++?,Practitioner, A,C++,Yes,No,Undefined,Depends on Compiler
+What is correct syntax of a for loop in C++?,Beginner, A,C++,for(initialization;condition; increment/decrement),for(increment/decrement; initialization; condition),"for(initialization, condition, increment/decrement",None of These
+"//Find the output of below C++ program? 
+
+#include
+
+void Execute(int &x, int y = 200)
+{
+ int TEMP = x + y;
+ x+= TEMP;
+ if(y!=200)
+     std::cout<(A) 5020--5020--(B) 5020--7012020--12020--(C) 5020--70120200--5020(D) 5020--7050200--5020-- B  CompilerPractitionerfunction in C++",Practitioner, B,C++,5020--5020--,5020--7012020--12020--,5020--70120200--5020,5020--7050200--5020--
+Can we overload functions in C++?,Beginner, A,C++,Yes,No,Compilation Error,Runtime Error
+"//How many times CppBuzz.com is printed in below C++ program?
+
+#include
+
+int main()
+{
+    int i=0;
+    lbl:
+    std::cout<<""CppBuzz.com"";
+    i++;
+    if(i<5)
+    {
+	goto lbl;
+    }
+
+    return 0;
+
+}",Practitioner, B,C++,Error,5 times,4 times,6 times
+"//What is output of below C++ program?
+#include
+
+int main()
+{
+  const int a=10;
+  a++;
+  std::cout<(A) 10(B) 11(C) Compilation Error(D) Linking Error C  CompilerBeginneroperators in C++",Beginner, C,C++,10,11,Compilation Error,Linking Error
+How to access and edit data in data file handling using structures,Practitioner, C,C++,read(),write(),both A and B,without read()
+"Among the operators *, /, and %, which one has the highest precedence?",Practitioner, D,C++,*,/,%,all have same precedence
+Which operator has highest precedence?,Beginner, A,C++,(),=,*,++
+"//What is the value of a in below C++ program?
+
+int main()
+{
+ int a, b=20;
+ a = 90/b;
+ return 0;
+}",Beginner, C,C++,4.5,4,4,Compilation Error
+"//What is the output of the following C++ program ?                   
+#include
+
+class base
+{
+public:
+       base()
+       {          
+           cout<<""BCon"";
+       }
+       ~base()
+       {
+	   cout<<""BDest "";
+       }
+};
+class derived: public base
+{
+public:
+       derived()
+       {     cout<<""DCon "";
+       }
+       ~derived()
+       {     cout<<""DDest "";
+       }
+};
+
+int main()
+{
+derived object;
+return 0; 
+}",Beginner, C,C++,Dcon DDest,Dcon DDest BCon BDest,BCon DCon DDest BDest,BCon DCon BDes DDest
+"//What is the output of the below C++ program?
+
+int main()
+{
+int a = 10;
+cout<(A) 10(B) 11(C) 12(D) Not defined A  CompilerBeginneroperators in C++",Beginner, A,C++,10,11,12,Not defined
+What is the full form of oop,Beginner, A,C++,Object oriented programming,Oriented object programming,Office oriented programming,office objective programming
+"What is output of the below C++ program?
+
+int main()
+{
+  int a=10;
+  int b,c;
+  b = a++;
+  c = a;
+  std::cout<(A) 111011(B) 111111(C) 101011(D) 101010 A  CompilerBeginneroperators in C++",Beginner, A,C++,111011,111111,101011,101010
+Can a for loop contain another for loop?,Beginner, B,C++,No,Yes,Compilation Error,Runtime Error
+Can a Structure contain pointer to itself?,Beginner, A,C++,Yes,No,Compilation Error,Runtime Error
+What is size of void in bytes?,Beginner, D,C++,1,2,4,0
+Can any function call itself?,Beginner, A,C++,Yes,No,Compilation Error,Runtime Error
+"//What should be the output of below program?
+
+#include
+
+int main()
+{
+ 
+std::cout<<""CppBuzz"";;;;;  
+ return 0;                                                                          
+}",Beginner, C,C++,Compilation Error,Runtime Error,CppBuzz,CppBuzz;;;;
+"//What should be the output?
+
+#include
+using namespace std;
+
+int main() {
+    int new = -10;
+    std::cout<<""new is: ""<(A) new is: -10(B) new is: 10(C) Compilation Error(D) new is: 0 C  CompilerBeginnerloops in C++",Beginner, C,C++,new is: -10,new is: 10,Compilation Error,new is: 0
+"What should be the output of below program?
+
+#include
+
+int main()
+{
+    int a = 1;
+    switch(a)
+    {
+    case 1: std::cout<<""One"";
+    case 2: std::cout<<""Two"";
+    case 3: std::cout<<""Three"";
+    default: std::cout<<""Default"";
+    }
+    return 0;
+
+}",Practitioner, D,C++,One,Compilation Error,Default,OneTwoThreeDefault
+What is size of void in C++?,Expert, D,C++,2 Bytes,4 Bytes,Undefined,0
+C++ is superset of which langauge?,Beginner, D,C++,BASIC,VB,PASCAL,C
+"#include
+
+class Mycpp
+{
+    int Mycpp()
+    {
+       std::cout<<""Constructor"";
+       return 0;
+     }
+};
+
+int main()
+{
+    Mycpp obj;
+    return 0;
+}",Beginner, C,C++,Constructor,0,Compilation Error,Runtime Error
+"#include
+
+class Mycpp
+{
+    
+};
+
+int main()
+{
+    Mycpp obj;
+    return 0;
+}",Beginner, B,C++,Compilation Error - Constructor Missing,Nothing would be printed,Undefined,In constructor
+"#include
+
+class X
+{
+public: X()
+        { std::cout<<""X""; }
+        ~X()
+        { std::cout<<""~X""; }
+};
+
+class Y : public X
+{
+public: Y()
+        { std::cout<<""Y""; }
+        ~Y()
+        { std::cout<<""~Y""; }
+};
+
+int main()
+{
+    Y obj;
+    return 0;
+}",Expert, B,C++,XY~X~Y,XY~Y~X,X~XY~Y,X~X~YY
+"#include
+
+int main()
+{
+
+std::cout<<-1-1-1;
+
+return 0;
+}",Beginner, D,C++,Compilation Error,0,3,-3
+When Virtual Table is created?,Expert, D,C++,Every Class has VTable,Class inherited from other Class,When a Class Overrides the function of  Base class,Class has atleast one Virtual Function
+How many object can be created of a Class in C++?,Beginner, C,C++,1,5,There is no limit,256
+What is abstract class?,Practitioner, C,C++,A class with abstract keyword,A class with no functions in it,A class with atleast one pure virtual function,Empty Class
+What is the size of empty class?,Practitioner, B,C++,0,1,2,4
+Can a class contain another class in it ?,Practitioner, A,C++,Yes,No,Can have but in different file,We can have in any scenario
+Can we assign null to void pointer?,Expert, B,C++,No,Yes,Linking Time,No
+Can we create our own workspace?,Practitioner, A,C++,Yes,No,GIT,Valgrind
+When can we have two classes with same name?,Practitioner, B,C++,We cant have,In different work space,"By using extern ""C"" keyword",By Converting C++ code to C
+Can we create array of reference?,Practitioner, A,C++,Yes,No,It cotains address of Object,None of these
+Exceptions are Caught at ?,Expert, B,C++,Compilation Time,Run Time,3,4
+Which of the following is Memory Leak detection tool?,Expert, D,C++,GC++,KDevelop,Pointer which is pointing to new location,None of these
+Is const better than #define?,Beginner, A,C++,Yes,No,Depends on compiler,Depends on Compiler
+Is it good idea to return an address or a reference of a local variable?,Beginner, B,C++,Yes,No,0,None of these
+How to stop Name Mangling in C++?,Practitioner, C,C++,It is not possible,It is possible only with C code,Balance Binary Tree,List
+Can we create object of Abstract class?,Practitioner, B,C++,Yes,No,Stack,We cant create object
+"Is there any difference in below two statements?
+
+int a = 10;
+int a(10);",Beginner, B,C++,Yes,No,We can create 1 object,Depends on Compiler
+Can we have Constructor in Abstract class?,Practitioner, B,C++,Yes,No,Both has are same,None of these
+Can we have a reference to a pointer in C++?,Beginner, A,C++,Yes,No,Structure which contains another structure,-
+Can we create pointer to Abstract class?,Practitioner, A,C++,Yes,No,+,Compilation Error
+Can we create Nested classes in C++?,Practitioner, A,C++,Yes,No,Undefined,123
+Can we reinitialize reference variable?,Beginner, B,C++,Yes,No,0,None of these
+Can we overload Constructor?,Expert, A,C++,Yes,No,Six,12344
+What is VTable?,Practitioner, B,C++,It contains VPTR,It contains address of Virtual function,123455,Infinite Times
+Can this pointer point to another class?,Practitioner, B,C++,Yes,No,0,Dp@*Czz
+How many Access specifier are there in C++?,Beginner, C,C++,1,2,cpp@buzz,"c1=-6,c2=-6"
+What is dangling pointer?,Practitioner, B,C++,A pointer pointing to NULL,Pointer pointing to memory location which has been freed,"c1=-4,c1=b-3",5
+Can we have Virtual Destructor ?,Practitioner, A,C++,Yes,No,4,1@2@2@
+Can we have pure Virtual Destructor?,Practitioner, B,C++,Yes,No,1@1@2@,std::out_of_range
+Can we call virtual function using object?,Expert, A,C++,Yes,No,std::runtime_error,std::bad_cast
+"Is it mandatory to override virtual function
+in Derived class?",Practitioner, B,C++,Yes,No,std::runtime_error,std::runtime_error
+If a class(has one virtual function) has 5 Objects then how many Vtable it  will have?,Expert, B,C++,5,1,std::exception,.a
+Can we have Pure Virtual Destructor?,Practitioner, B,C++,Yes,No,.lib,Depends on Compiler
+Can we have constructor as Virtual?,Practitioner, B,C++,Yes,No,Address Space,PART-OF
+Is duplicate data allowed in set?,Practitioner, B,C++,Yes,No,USES-A,None of these
+The underlying data structure used for std::map in C++ is?,Practitioner, C,C++,AVL Tree,Binary Tree,Depends on compiler,C++ 17
+Which STL container allows insertion and removal of data from any position?,Practitioner, D,C++,Vector,Deque,C++ 14,C++ 03
+What is Singleton class?,Practitioner, C,C++,We can create n number of object,We can create max 256 objects,C++ 0X,>>
+"Which one is more faster?
+A - #include 
+B - #include ""iostream.h""",Practitioner, A,C++,A,B,->,dynamic_cast
+What is Self Referential Structure?,Practitioner, B,C++,Structure which contains pointers,Structure which has pointer to itself,reinterpret_cast,Compiler specific
+"Which operator has more precedence among the following?
+
+*
+++
++
+-",Beginner, B,C++,*,++,Not possible,None of these
+"Comma(,) is the operator which has least precdence among all operator.",Beginner, A,C++,Yes,No,Compilation Error,C++ 11
+"What should be output of below C++ program
+if user enters a = 5?
+
+int main()
+{
+    int a;
+    cin>>a; // user can enter any value
+    
+	if (++a*5 <= 25)
+	{
+	    cout<<""Hello"";
+	}
+	else
+	{
+	    cout<<""Bye"";	
+	}
+
+}",Practitioner, B,C++,Hello,Bye,C++ 1z,C++20
+"//Find the output of below program:-
+
+int main() 
+{
+int i = 0, x = 0;
+
+do
+{
+    if(i % 5 == 0)
+    {
+       std::cout<(A) 01(B) 012(C) 0(D) 0123 B  CompilerPractitionerloops in C++",Practitioner, B,C++,1,12,C++1z,4 Million +
+"What should be printed on screen?
+
+int main() 
+{
+int x = 5;
+
+if(x++ == 5)
+cout<<""Five""<(A) FiveSix(B) Five(C) Six(D) None of these B  CompilerPractitionerconditional in C++",Practitioner, B,C++,FiveSix,Five,3 Million +,C#
+"#include
+
+int main() 
+{
+int i=0, x=0;
+
+for(i=1; i<10; i*=2)
+{
+    x++;
+    std::cout<(A) 1234567899(B) 12345678910(C) 123455(D) 12344 D  CompilerExpertloops in C++",Expert, D,C++,1234567899,12345678910,C++,Both A and B
+"How many times 'its a while loop' should be printed?
+
+int main()
+{
+int i = 1 ;
+i = i - 1 ;
+
+while(i)
+{
+    cout<<""its a while loop"";
+    i++ ;
+}
+
+return 0;
+}",Expert, C,C++,1,2,Stands for Graphic Use Interaction,Integer
+"//Assume all headers are included
+//What should be printed?
+
+int main()
+{
+char Text[ ] = ""Cpp@Buzz"";
+
+for(int I=0; Text[I]!=' ';I++)
+{
+if(!isalpha(Text[I]))
+Text[I]='*';
+else if(isupper(Text[I]))
+Text[I]=Text[I]+1;
+else
+Text[I] = Text[I+1];
+}
+cout<(A) *pp@*uzz(B) CPP@BUZZ(C) cpp@buzz(D) Dp@*Czz D  CompilerExpertconditional in C++",Expert, D,C++,*pp@*uzz,CPP@BUZZ,Short,property
+"//Find output of below program
+
+#include
+
+int main()
+{
+int c1,c2;
+int a = -8;
+int b = 3;
+c1 = --a + b;
+c2 = a-- + b;
+std::cout<<""c1=""<(A) c1=-7,c2=-4(B) c1=-7,c2=-3(C) c1=-4,c1=b-3(D) c1=-6,c2=-6 D  CompilerPractitioneroperators in C++",Practitioner, D,C++,"c1=-7,c2=-4","c1=-7,c2=-3",function,None of the above
+"How many times CppBuzz.com is printed here?
+
+int main()
+{
+
+for(int i=0; i< 5; i++);
+cout<<""CppBuzz.com"";
+
+return 0;
+}",Beginner, B,C++,0,1,"char stringNum[20]; int num=100; sprintf(stringNum,""%d"",num);",None of the above
+"//Find the output of below program.
+
+#include
+
+int main()
+{
+for(int i=1;i<=2;i++)
+{
+for(int j=i;j<=2;j++)
+std::cout<(A) 1@2@(B) 1@2@1@(C) 1@1@2@(D) 1@2@2@ C  CompilerPractitionerloops in C++",Practitioner, C,C++,1@2@,1@2@1@,Arguments are placed in Heap,register
+Which Exception is thrown when new fails to allocate memory?,Expert, B,C++,std::exception,std::bad_alloc,pascal,None of the above
+Which exception is thrown when dynamic_cast fails?,Practitioner, D,C++,std::bad_typeid,std::logic_error,PE,(capture)(parameters)->return-type {body}
+Which is the Parent class for all exceptions?,Practitioner, C,C++,std::bad_exception,std::logic_error,[capture][parameters]->return-type {body},It instruct the compiler to generate the default implementation
+"What is the extention of the executable file produced
+after compiling C/C++ code using g++ on Linux?",Practitioner, B,C++,.exe,.out,It instruct the compiler to set default argument values for any function,None of these
+Which part of memory is used for the allocation of local variables declared inside any function.,Expert, B,C++,Heap,Stack,Making up tokens from characters,long long
+Car contains Engine. What type of relationship is this?,Practitioner, B,C++,IS-A relation,HAS-A relation,longs long,friend
+"Are both of the preprocessor directives solving same purpose?
+
+#include 
+
+#include ""iostream.h""",Practitioner, A,C++,Yes,No,stop,typename t.foo<U>(u);
+What is the latest version of C++?,Expert, D,C++,C++ 03,C++ 11,t.template foo<U>(u);,sqrt()
+ISO/IEC 14882:1998 represents which version of C++?,Expert, B,C++,C++ 03,C++ 98,goto,mutable
+Which of the following is Right Shift operator?,Beginner, D,C++,<,<<,wchar_t,None of these
+Which of the following is the least safe type casting in C++?,Expert, C,C++,static_cast,const_cast,It allows a class data member to be modified even though it is the data member of a const object,Register variable are used with high configuration machines
+Which keyword is used to write Assembly code within a C++ program?,Practitioner, B,C++,ASM,asm,It takes extra bytes of memory,All of these
+"#include
+
+int main()
+{
+if(-1 == -1){
+std::cout<<""Hey.."";
+}
+else{        std::cout<<""CppBuzz.com"";
+}
+
+return 0;
+}",Practitioner, A,C++,Hey..,CppBuzz.com,Change value outside by means outside our C program,None of these
+C++ 17 is also known as ___,Expert, C,C++,C++ 0x,C++ 98,It inrease execution time of program,Depends on Compiler
+Which version of C++ introduced keyword - constexpr?,Expert, B,C++,C++0x,C++11,Pass by pointer/address,ios::tellg
+Estimated C++ users?,Practitioner, D,C++,1 Million +,2 Million +,ios::app,g++ -std=cpp11 -o output.out source.cpp
+Which language is not a true object-oriented programming language?,Beginner, B,C++,VB.NET,VB 6,g++ -std=c++ 11 -o output.out source.cpp,NULL pointer
+What do you understand by GUI?,Beginner, D,C++,"Uses buttons, menus, and icons",Should be easy for a user to manipulate,Last argument,We should ignore implementation of link list using structure as it consume more memory
+Which is not an integer data type?,Beginner, A,C++,Single,Byte,We can create link list either by class or structure,nmake option -fname myfile
+A constructor is a special type of?,Beginner, C,C++,class,field,nmake option -f myfile,12
+What is the best way to convert int to string according to C++ standard?,Expert, B,C++,char *intStr = itoa(a); string str = string(intStr);,std::string s = std::to_string(42);,8,12
+What is true ? when we explicitly declare a function to use the __fastcall convention.,Expert, A,C++,Arguments are placed in registers,Arguments are placed in stack,8,12
+Which one of these is not calling convention?,Expert, D,C++,cdecl,syscall,8,None of these
+Which file format is used in Binaries on Linux,Expert, A,C++,ELF,DLLs,Depends on Compiler,2
+What is the correct syntax for lambda expression in C++11?,Expert, A,C++,[capture](parameters)->return-type {body},[parameters](capture)->return-type {body},1,3
+"Does below code compiles successfully on C++11?
+
+class C
+{
+ int a=7;
+
+ public:
+        C();
+};",Expert, A,C++,Yes,No,1,Some Garbage Value
+What is the purpose of 'default' keyword in C++ 11?,Beginner, D,C++,It instruct the compiler to set default value to any variable,It instruct the compiler to set default return value to any function,Compilation Error,4
+What do you understand from lexical analysis?,Beginner, C,C++,Checking the Grammar,Finding the type of names and expressions,-1,-4
+In C++11 which data type is newly introduced among these?,Beginner, D,C++,long,long int,2,-4
+Which keyword in C++ 11 is used to prevent a virtual function from being overridden?,Beginner, A,C++,final,static,1,none of these
+"If C functions will be called from C++, 
+then C include files will use the following declaration.
+is this True / False?
+
+#ifdef __cplusplus
+extern ""C"" {
+#endif
+
+//C function declarations
+
+#ifdef __cplusplus
+}
+#endif",Practitioner, A,C++,TRUE,FALSE,1,None of the above
+"The following code will fail to compile:
+
+template 
+void call_foo(T t, U u) {
+  t.foo(u);
+}
+
+How would you fix this?",Expert, C,C++,t.foo template<U>(u);,t.foo<typename U>(u);,objects,enum
+Which one of these is not a keyword?,Practitioner, D,C++,do,sizeof(),1024,.
+C++ 11 introduces a new keyword. Find out that keyword.,Practitioner, B,C++,pragma,override,Depends on Compiler,namespace:a
+What is the use of mutable keyword?,Practitioner, C,C++,It makes variable constant,There is no such keyword in C++,class,<fstream>
+Why use register keyword in C++ code?,Practitioner, B,C++,It saves the memory,It runs code faster by allocating varibales in CPU register,->,<ostream>
+Can a parameter be both const and volatile?,Practitioner, A,C++,Yes,No,namespace->a,<iostream>
+What is/are true statements are const volatile variables?,Practitioner, D,C++,It is volatile because it can change at any time,It is const because our C program must not try to modify it,<ifstream>,ios::end
+What is the advantage of local variable?,Practitioner, B,C++,It saves memory,It releases memory once it go out of scope,<iofstream>,ios::out & ios::in
+Which one of these takes more memory?,Beginner, A,C++,Pass by Value,Pass by reference,<fstream>,Gives the current position of the put pointer
+Which one of these is invalide file mode?,Practitioner, D,C++,ios::trunc,ios::ate,ios :: in,Gives the current position of the put pointer
+Which one is correct syntax to use C++11 features while compilation?,Expert, B,C++,g++ -std=c++-11 -o output.out source.cpp,g++ -std=c++11 -o output.out source.cpp,ios::out || ios::in,Gives the current position of the put pointer
+"In the below program 
+int main(int argc, char *argv[]){}
+what would be the value of argv[argc]?",Expert, D,C++,Filename,First argument,Gives the current position of the get pointer,Moves get pointer (input) to a specified location
+Which one is true ?,Beginner, C,C++,We can create link using structure only,We can create link list using class only,Gives the current position of the get pointer,While
+Which one of the following is correct syntax for nmake command?,Expert, A,C++,nmake -f myfile option,nmake -f opiton myfile,Gives the current position of the get pointer,Algorithm
+"What should be output of below program? program is compiled on g++ compiler.
+
+#include
+using namespace std;
+
+struct student{	
+ char a;  char b;  int c;
+};
+
+int main()
+{
+ cout<(A) 4(B) 6(C) 8(D) 12 C  CompilerExpertstructure in C++",Expert, C,C++,4,6,Moves put pointer (output) to a specified location,Bootstrap
+"#include
+using namespace std;
+
+struct student{	
+ char a; int c;	char b;
+};
+
+int main()
+{
+    std::cout<(A) 4(B) 6(C) 8(D) 12 D  CompilerExpertstructure in C++",Expert, D,C++,4,6,If,g++ -f <filename>
+"#include
+
+
+struct student{	
+    int a; char b; char c;
+};
+
+int main()
+{
+    std::cout<(A) 4(B) 6(C) 8(D) 12 C  CompilerExpertstructure in C++",Expert, C,C++,4,6,Rekursif,GDB C Compiler
+"Is below program of C++ 11 valid & runs without compilation error?
+#include 
+#include 
+#include 
+using namespace std;
+
+void print_square(int i)
+{
+ cout << i*i << endl;
+}
+int main()
+{
+ vector v;
+ // vector gets filled
+ for_each(v.begin(), v.end(), print_square);
+ return 0;
+}",Expert, A,C++,Yes,No,WxWidget,None of the above
+"Is this valid C++ 11 program & get compiled without any error?
+
+#include 
+#include 
+#include 
+using namespace std;
+
+int main() {
+
+vector v;
+// vector gets filled
+
+for_each(v.begin(), v.end(),
+[](int i) { cout << i*i << endl; } );
+
+return 0;
+}",Expert, A,C++,Yes,No,g++ <filename>,0
+"Find the output of below program
+#include
+using namespace std;
+enum color{
+	Black,
+	blue,
+	red	
+};
+int main()
+{
+    color obj = blue;
+    cout<(A) blue(B) 2(C) 1(D) None of these C  CompilerPractitionerenum in C++",Practitioner, C,C++,blue,2,Generic C compiler,error
+"#include
+
+enum color{
+	black=1,
+	blue,
+	red	
+};
+int main()
+{
+    color obj = blue;
+    std::cout<(A) blue(B) Compilation Error(C) 1(D) 2 D  CompilerPractitionerenum in C++",Practitioner, D,C++,blue,Compilation Error,Initialized data section,None of the above
+"#include
+using namespace std;
+enum color{
+	black=1,
+	blue,
+	red	
+};
+int main()
+{
+    color obj = yellow;
+    cout<(A) yellow(B) black(C) Compilation Error(D) 3 C  CompilerPractitionerenum in C++",Practitioner, C,C++,yellow,black,9,C++20
+"#include
+using namespace std;
+enum color{
+	black,
+	blue,
+	red	
+};
+int main()
+{
+    color obj;
+    cout<(A) black(B) 0(C) -1(D) Some Garbage Value D  CompilerPractitionerenum in C++",Practitioner, D,C++,black,0,2,C++20
+"What should be the output of below program? Please note all programs are compiled on GCC compiler.
+#include
+using namespace std;
+enum color{
+	black,
+	blue,
+	red	
+};
+int main()
+{    
+    color obj;
+    cout<(A) 0(B) 1(C) 2(D) 4 D  CompilerPractitionerenum in C++",Practitioner, D,C++,0,1,std::string_view,C++20
+"#include
+
+enum color{
+	black=-5,
+	blue,
+	red	
+};
+int main()
+{    
+    color obj = blue;
+    std::cout<(A) Compilation Error(B) 0(C) 1(D) -4 D  CompilerPractitionerenum in C++",Practitioner, D,C++,Compilation Error,0,C++ 17,C++20
+"#include
+
+enum color{
+	black=-5,
+	blue,
+	red	
+};
+int main()
+{    
+    color obj = blue;
+    std::cout<(A) Compilation Error(B) 0(C) 1(D) -4 D  CompilerPractitionerenum in C++",Practitioner, D,C++,Compilation Error,0,C++17,std::vector<int> vecOfInts;
+The data elements in structure are also known as ?,Beginner, B,C++,data,members,C++17,Initialize a Vector with 5 int & All default value with be -1
+How many elements we can have in any structure?,Practitioner, D,C++,128,256,C++17,1234
+Can we initialize structure's elements in structure itself?,Beginner, B,C++,Yes,No,std::vector(int) vecOfInts;,"Initialize vect to 5 string with value ""Hi"" & prints them"
+In place of structure which other data type can be used in programming?,Practitioner, C,C++,int,float,Initialize a Vector with 5 int & all default values will be garbage,std::thread threadObj(thread_function());
+Can we declare structure inside structure?,Practitioner, A,C++,Yes,No,12340,None of these
+Can we typedef in declaring structure?,Practitioner, A,C++,Yes,No,"Initialize vect to 1 string with value ""Hi"" & prints only one",employee[2].hourlyWage = 75.00;
+Which operator is used to access the namespace?,Practitioner, B,C++,:?,::,std::thread threadObj((void *)thread_function);,cout<<student1 ->gpa;
+What is the correct syntax to access any variable of Namespace?,Practitioner, A,C++,namespace::a,namesspace.a,a tag,1
+Which header file is used to only read files in C++?,Beginner, C,C++,<iostream>,<ofstream>,hourlyWage[2].employee = 29.75;,link(open(filename.txt);
+Which header file is used to write data into file?,Beginner, A,C++,<ofstream>,<outstream>,cout<<student[1].gpa;,insert
+Header file used to perform both read & write operations on files in C++?,Beginner, C,C++,<ofstream>,<ifstream>,‘M’,There is no read position
+Which mode of the following will append the file if it already exist in C++?,Practitioner, B,C++,ios :: out,ios :: app,linkstream(“filenemae.txt”),Honda()
+If I want use multiple modes in open() function while file handling then which operator is used for this?,Expert, A,C++,ios::out | ios::in,"ios::out, ios::in",put,Hello!
+Why seekg() is used in file handling of C++,Practitioner, A,C++,Moves get pointer (input) to a specified location,Moves put pointer (output) to a specified location,Nonexistent until the program declares it,destructor
+Why use seekp() in file handling of C++?,Practitioner, B,C++,Moves get pointer (input) to a specified location,Moves put pointer (output) to a specified location,run(),object name
+What is the roll of tellg() in C++ file handling?,Practitioner, C,C++,Moves get pointer (input) to a specified location,Moves put pointer (output) to a specified location,Hello!,endif
+What is the role of tellp() in C++ file handling?,Practitioner, A,C++,Gives the current position of the put pointer,Gives the current position of the get pointer,constructor,overloaded
+The statement structure that is NOT a looping is:,Beginner, C,C++,For,Do…While,class name,register
+A process of repeating the workflow is called ...,Beginner, B,C++,Branching,Looping,#ifndef,friend
+Which of the following is not a C++ Library?,Practitioner, D,C++,QT,SDL,constructed,When opening the file stream
+Which is the correct command used to compile source code (.cpp files) into object code(.o files)?,Expert, B,C++,g++ -o <filename>,g++ -c <filename>,exterb,None of these
+GCC compiler is known as?,Beginner, B,C++,The GNU C compiler,GNU C compiler,destructor,None
+The command nm on linux lists few symbols. What symbol 'D'represents?,Expert, C,C++,Normal Data Section,Un initialized data section,Only when reading from the file,protected
+"#include
+using namespace std;
+
+int main()
+{
+ int x = 9;
+ while (x>0)
+ x--;
+ cout<(A) 9876543210(B) 987654321(C) 9(D) 0 D  CompilerPractitionerloops in C++",Practitioner, D,C++,9876543210,987654321,Function overloading,None
+"//How many times will A be printed ?
+
+class A
+{
+
+public:
+    ~A(){
+    std::cout <<""A"";
+    }
+};
+int main()
+{
+    A obj;
+    obj.~A();
+}",Practitioner, C,C++,0,1,may,Function will not throw any exception
+Which of the following is not a C++ 17 library feature?,Expert, D,C++,std::variant,std::optional,public,Garbage Value is printed
+"Is this a valid syntax in C++ 17?
+
+namespace A::B::C {
+  int i;
+}",Expert, A,C++,Yes,No,protected,NotEqual
+"Is this is a valid UTF-8 character literal? 
+
+char x = u8'x';",Expert, A,C++,Yes,No,Function will throw only standard exceptions defined in <exception>,After all #inludes
+Lambda expression are feature of which C++ version?,Expert, B,C++,C++11,C++14,Compilation Error,CppBuzz.com
+Which C++ version support Digit Separators 1'000'000?,Expert, B,C++,C++11,C++14,EqualNotEqual,constructor.destructor. And ptr is freed
+Which version of C++ added feature of auto for return type of functions?,Expert, B,C++,C++11,C++14,In middle of #includes,C++11's weak_ptrs are used for unique ownership
+In which version of C++ auto was limited to lambda functions?,Expert, A,C++,C++11,C++14,We can't use only cout from std namespace,We can also reset a shared_ptr by assigning it the value nullptr
+What is the correct way to initialize vector in C++?,Practitioner, D,C++,std::vector<integer> vecOfInts;,std::vector int <vecOfInts>,Nothing is printed,Error: Runtime exception
+"What is true about his statement in C++?
+std::vector vecInts(5);",Practitioner, A,C++,Initialize a Vector with 5 int & all default value is 0,Initialize a Vector with 5 int,constructor.destructor. but ptr is never freed,ptr2 = ptr1
+Is it possible to initialize any Vector with an Array in C++?,Practitioner, A,C++,Yes,No,C++11's weak_ptrs are replacement of unique_ptr,Address of ptr | Garbage Value
+"Will below program run without any compilation errors?
+Assume that all header files are included.
+
+int main()
+{
+
+std::list listOfStr;
+listOfStr.push_back(""1"");
+listOfStr.push_back(""2"");
+listOfStr.push_back(""3"");
+listOfStr.push_back(""4"");
+ 
+// Initialize a vector with std::list
+std::vector vecOfStr(listOfStr.begin(),listOfStr.end());
+ 
+for(std::string str : vecOfStr)
+    std::cout<(A) Yes(B) No A  CompilerPractitionerstl in C++",Practitioner, A,C++,Yes,No,It can't  be copied or assigned to another shared_ptr,None of the above
+"What should be the output of below program? Assume that all header files are included.
+
+int main()
+{
+std::list listOfStr;
+listOfStr.push_back(""1"");
+listOfStr.push_back(""2"");
+listOfStr.push_back(""3"");
+listOfStr.push_back(""4"");
+ 
+// Initialize a vector with std::list
+std::vector vecOfStr(listOfStr.begin(), listOfStr.end());
+ 
+for(std::string str : vecOfStr)
+    std::cout<(A) 1 2 3 4(B) 1234(C) 12340(D) 01234 B  CompilerPractitionerstl in C++",Practitioner, B,C++,1 2 3 4,1234,Error: Assignment is not allowed at line 2,bad_alloc
+"What does this function do?
+
+void func() {
+	std::vector vecOfString(5, ""Hi"");
+ 
+	for (std::string str : vecOfStr)
+		std::cout << str << std::endl;
+ 
+}",Practitioner, D,C++,"Initialize vect to 5 string with value ""Hi""","Initialize vect's first element to a string with value ""Hi"" & prints them",ptr2 = std::move(ptr1);,48
+"Correct syntax for creating a thread using Function Pointer?
+thread_function is the name of function which need to be executed
+in separate thread.",Expert, A,C++,std::thread threadObj(thread_function);,std::thread threadObj(&thread_function);,Address of ptr | 0,None of the Above
+A struct can contain members of various data types,Beginner, A,C++,TRUE,FALSE,Runtime error (Segmentation fault),Hello Base Hello Derived
+Structure variables may be passed as arguments to functions,Beginner, A,C++,TRUE,FALSE,out_of_range,
+"You can define any number of union variables, but each variable can store the value of one member at a time",Beginner, A,C++,TRUE,FALSE,84,
+"In the following structure declaration, idNum is:
+Struct Employee
+{
+String name;
+int idNum;
+};",Beginner, A,C++,a member,an array,basebase,
+Which of the following statements assigns a value to the hourlyWage member of employee[2]?,Beginner, D,C++,employee[2]->hourlyWage = 50.00;,employee2.hourlyWage = 7.50;,Hello Derived Hello Base,
+Which of the following statements outputs the value of the gpa member of element 1 of the student array?,Beginner, C,C++,cout<<student1.gpa;,cout<<firstStudent.gpa;,,
+"After the following statement executes, what value will the MAPLE enumerator be stored as, in memory?
+
+enum Tree { OAK, MAPLE, PINE };",Beginner, D,C++,MAPLE,2,,
+Data stored in RAM disappears once a program ends or the computer is powered down.,Beginner, A,C++,TRUE,FALSE,,
+When you store data in a variable it is automatically saved in a file,Beginner, B,C++,TRUE,FALSE,,
+"By default, files are opened in binary mode",Beginner, B,C++,TRUE,FALSE,,
+Which of the following statements opens a file and links it to a file stream object?,Practitioner, A,C++,file.open(“c:filename.txt”);,open(afile) = link(anObject);,,
+Only one file stream object can be declared per C++ program,Beginner, B,C++,TRUE,FALSE,,
+Which member function writes a single character to a file?,Beginner, C,C++,get,write,,
+Closing a file causes any unsaved information still held in the file buffer to be saved to the file.,Expert, A,C++,TRUE,FALSE,,
+The end-of-file marker is automatically written when a file is closed,Practitioner, A,C++,TRUE,FALSE,,
+"When a file is opened by the program, the file stream object’s “read position” is",Practitioner, B,C++,At the end of the file,At the beginning of the file,,
+Objects in C++ are created from abstract data types that encapsulate data and functions together,Beginner, A,C++,TRUE,FALSE,,
+The public access specifier is used to protect important data,Beginner, B,C++,TRUE,FALSE,,
+A C++ class is almost similar to a structure,Beginner, A,C++,TRUE,FALSE,,
+C++ Class declarations should never be stored in their own header file,Beginner, B,C++,TRUE,FALSE,,
+"Assume that Honda is an instance of the Car class,
+and that Car class has a member function named run.
+Which of the following is a correct call to the run function?",Beginner, B,C++,Honda->run;,Honda.run();,,
+"#include 
+using namespace std;
+class TestingClass
+{
+public:
+TestingClass(int x)
+{
+ cout << x << endl; 
+}
+
+TestingClass()
+{
+ cout <<""Hello!""<< endl; 
+}
+
+};
+int main()
+{
+ TestingClass test(77);
+ return 0;
+}",Practitioner, B,C++,The programs runs with no output,77,,
+"A public member function may be called from a statement outside the class, is this correct?",Beginner, A,C++,TRUE,FALSE,,
+Which member function of a class is called automatically when any object is created of that class?,Beginner, C,C++,static function,utility function,,
+A class is a data type that is defined by the coder?,Beginner, A,C++,TRUE,FALSE,,
+The name of constructor is same name as?,Beginner, C,C++,first variable name,first function,,
+A class can have only one constructor,Practitioner, A,C++,TRUE,FALSE,,
+The key words private and public are access specifiers,Beginner, A,C++,TRUE,FALSE,,
+Destructor functions are often used to free memory that was allocated by the object,Beginner, A,C++,TRUE,FALSE,,
+The UML provides a set of standard diagrams for graphically depicting object-oriented systems,Beginner, A,C++,TRUE,FALSE,,
+"Which directive is used to create an “include guard”,
+which allows a program to be conditionally compiled.
+This prevents a header file from being included more than once",Practitioner, C,C++,#include,#guard,,
+An overloaded operator works with user defined data types,Practitioner, A,C++,TRUE,FALSE,,
+"When you redefine the way a standard operator works when it is used with class objects, you have done?",Practitioner, D,C++,re-assigned,reformatted,,
+"If you overload the prefix ++ operator, the postfix ++ operator is automatically overloaded",Practitioner, B,C++,TRUE,FALSE,,
+It is possible to declare an entire class as a friend of another class,Practitioner, A,C++,TRUE,FALSE,,
+"If a member variable is declared as one of the below, all objects of that class have access to that variable.",Practitioner, A,C++,static,auto,,
+"What type of function is not a member of a class, but has access to the private members of the class.",Practitioner, A,C++,Static function,constructor,,
+When is the external name of the file used in the program,Practitioner, D,C++,Any time you read or write to the file,Never,,
+"In C++, if you overload the < operator, you must also overload TRUE FALSE the > operator",Practitioner, B,C++,TRUE,FALSE,,
+"By default, when an object is assigned to another,
+each member of one object is copied to its counterpart in the other object.",Practitioner, A,C++,TRUE,FALSE,,
+"this pointer is a special built-in pointer that is automatically
+passed as a hidden argument to all non-static member functions",Practitioner, A,C++,TRUE,FALSE,,
+Which of following allows us to create new classes based on existing classes,Practitioner, B,C++,Polymorphism,Inheritance,,
+More than one class may be derived from a base class,Beginner, A,C++,TRUE,FALSE,,
+"When you derive a class from an existing class, you __ add new data and functions",Beginner, C,C++,never,must,,
+Polymorphism means the ability to take many forms,Beginner, A,C++,TRUE,FALSE,,
+"A virtual function is declared by placing the
+key word ___ in front of the return type in 
+the base class’s function declaration",Practitioner, A,C++,virtual,private,,
+"In the following statement, what is the derived class?
+class Car : protected Vehicle",Beginner, A,C++,Car,Vehicle,,
+A virtual function is a function that expects to be overridden in a derived class,Practitioner, A,C++,TRUE,FALSE,,
+"The statement below declares a pure virtual function, and must be overridden in derived classes:
+virtual void function() = 0;",Practitioner, A,C++,TRUE,FALSE,,
+The v-table is per class and not per object,Practitioner, A,C++,TRUE,FALSE,,
+dynamic_cast can be used only with pointers and references to objects,Practitioner, A,C++,TRUE,FALSE,,
+dynamic_cast is always successful when we cast a class to one of its base classes,Practitioner, A,C++,TRUE,FALSE,,
+"When dynamic_cast cannot cast a pointer because it is not
+a complete object of the required class it returns
+a null pointer to indicate the failure",Practitioner, A,C++,TRUE,FALSE,,
+"static_cast can perform conversions between pointers
+to related classes not only from the derived class to its base,
+but also from a base class to its derived",Practitioner, A,C++,TRUE,FALSE,,
+"reinterpret_cast converts any pointer type to any other pointer type, even of unrelated classes",Practitioner, A,C++,TRUE,FALSE,,
+"const_cast manipulates the constness of an object, either to be set or to be removed",Practitioner, A,C++,TRUE,FALSE,,
+An exception is always raised using a throw expression,Beginner, A,C++,TRUE,FALSE,,
+Any object (built-in or user-defined) can be thrown,Practitioner, A,C++,TRUE,FALSE,,
+"The formal parameter can be an ellipsis, in which case it handles all exceptions not yet handled",Practitioner, A,C++,TRUE,FALSE,,
+Exceptions can be ignored,Expert, A,C++,TRUE,FALSE,,
+"If not caught by handlers right after try block, exception moves to next-higher level and may be caught there",Practitioner, A,C++,TRUE,FALSE,,
+"If no handler at any level catches the exception, terminate() will be called and program will terminate",Practitioner, A,C++,TRUE,FALSE,,
+"void some_function() throw ();
+
+How does above function behaves?",Practitioner, D,C++,Function declaration has error,Behaviour is unknown,,
+In C++ only synchronous exception can be handled,Beginner, A,C++,TRUE,FALSE,,
+"#include
+using namespace std;
+
+class Country{
+private: int population;
+
+public: void setPopulation(int pop){
+             this->population = pop;
+          }
+         int getPopulation(){
+             return this->population;
+         }
+};
+
+class USA: private Country{
+
+};
+
+int main(){
+USA obj;
+obj.setPopulation(100);
+cout<(A) 100(B) 0(C) Compilation Error(D) Garbage Value is printed C  CompilerExpertinheritance in C++",Expert, C,C++,100,0,,
+"#include
+#include
+using namespace std;
+
+int main()
+{
+    char one[]=""one"";
+    char two[]=""two"";
+    
+    if(one==two){
+        cout<<""Equal"";
+    }
+    
+    if(strcmp(one, two)==0){
+        cout<<""Equal"";
+    }
+    else
+    {
+        cout<<""NotEqual"";
+    }
+
+    return 0;
+}",Practitioner, D,C++,Equal,EqualEqual,,
+Can we have nested namespaces in C++?,Beginner, A,C++,Yes,No,,
+"What should be the location of ""using namespace std;"" in c++ code?",Beginner, D,C++,Before all #include,After #include<iostream>,,
+"//What is different between these two lines?
+ using namespace std;
+ using std::cout;",Beginner, A,C++,"Using the entire namespace, using only single name from namespace",There is no difference,,
+"#include
+#define killer using
+
+killer namespace std;
+
+int main(){
+    std::cout<<""CppBuzz.com"";
+    return 0;
+}",Beginner, D,C++,Runtime Error,Compilation Erro,,
+"//How this code would behave?
+
+#include
+#include
+using namespace std;
+
+class cppbuzz{
+    
+public:
+    cppbuzz(){
+        cout<<""constructor."";
+        int a; 
+        throw a;
+    }
+    ~cppbuzz(){
+        cout<<""destructor."";
+    }
+};
+
+int main()
+{
+    cppbuzz *ptr = new cppbuzz();
+    delete ptr;
+
+return 0;
+}",Practitioner, A,C++,Program is terminated without printing anything on console,Prints 'constructor' and then it is terminated,,
+Select true statement about weak_ptr of C++ 11,Practitioner, A,C++,C++11's weak_ptrs are used with shared_ptrs.,C++11's weak_ptrs can be used without weak_ptrs,,
+Select the false statement about shared_ptr,Practitioner, C,C++,We can only use these smart pointers to refer to objects allocated with new,It is  recommended that you do not use both 2 shared_ptr and raw pointer on the same object,,
+"Is there any error in following code?
+
+unique_ptr ptr1 (new XYZ); 
+unique_ptr ptr2(ptr1);",Practitioner, A,C++,This is valid code snippet with no error,Error: Copy construction is not allowed at line 2,,
+How to transfer the ownership of unique_ptrs?,Expert, C,C++,We can't transfer the ownership of unique pointers,It is possible using copy constructor - unique_ptr<Thing> ptr2(ptr1);,,
+"Find the output of following code
+
+#include 
+
+using namespace std;
+
+int main(){
+    
+    int * ptr = new int;
+    cout<(A) Address of memory allocated | Garbage Value(B) Address of memory allocated | 0(C) Address of ptr | 0(D) Address of ptr | Garbage Value B  CompilerBeginnernew_delete in C++",Beginner, B,C++,Address of memory allocated | Garbage Value,Address of memory allocated | 0,,
+"How this C++ code behaves?
+
+#include 
+
+using namespace std;
+
+int main(){
+    
+    int * ptr = NULL;
+    ptr++;
+    delete ptr;
+    return 0;
+}",Beginner, C,C++,Program runs without any error,Compilation Error,,
+"Which of the following Exception is thrown by C++ 'new'
+when there is no memory available to allocate?",Practitioner, D,C++,bad_exception,overflow_error,,
+"// find the output of below program if user enters: 2 2 2
+#include
+using namespace std;
+
+class Rectangle
+{
+protected:
+int length,width,area;
+public:
+void getdata()
+{
+cout<<""enter data :"";
+cin>>length>>width;
+}
+void print()
+{
+area=length*width;    
+cout<>height>>length>>width;
+}
+void dprint()
+{
+volume=length*height*width;    
+cout<(A) 08(B) 04(C) 84(D) 48 D  CompilerPractitionerinheritance in C++",Practitioner, D,C++,8,4,,
+"//find the output of below c++ program
+
+#include
+using namespace std;
+
+class base{
+    public: 
+    void hello(){
+        cout<<""base"";
+    }
+};
+
+class derived: private base{
+    
+};
+
+int main()
+{
+derived obj;
+obj.hello();
+return 0;
+}",Practitioner, D,C++,base,Nothing is printed,,
+"#include
+using namespace std;
+
+class cppbuzz_base{
+    public: 
+    
+    void hello(){
+        cout<<""Hello Base "";
+    }
+};
+
+class derived: public cppbuzz_base{
+    public:
+    
+    void hello(){
+        cout<<""Hello Derived "";
+    }
+    
+};
+
+int main()
+{
+derived obj;
+cppbuzz_base baseObj = cppbuzz_base(obj);
+baseObj.hello();
+return 0;
+}",Practitioner, B,C++,Hello Derived,Hello Base,,
