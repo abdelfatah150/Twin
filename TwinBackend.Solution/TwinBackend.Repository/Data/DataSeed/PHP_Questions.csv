@@ -1,0 +1,13 @@
+Title,Category,Correct_Answer,Level,Choice_1,Choice_2,Choice_3,Choice_4
+"Correct syntax to print ""Hello"" in PHP",PHP, D,Beginner,"<?php echo ""Hello"" ?>","<php? echo ""Hello""; ?>",<?php echo Hello; ?>,"<?php echo ""Hello""; ?>"
+In PHP all variables must begin with a dollar sign character?,PHP, A,Beginner,TRUE,FALSE,"/* echo ""Hello""; */","/* //echo ""Hello""; */"
+Which one the following comment is invalid in PHP?,PHP, B,Beginner,"//echo ""Hello"";","'echo ""Hello"";",4,5
+Is it possible to insert HTML code in PHP code?,PHP, A,Beginner,Yes,No,$1a1 = 10;,$a1 = 10;
+How many types of loops are supported in PHP?,PHP, C,Beginner,2,3,$$$a = 10;,$1a = 10;
+Find correct way of declaring variables:,PHP, D,Beginner,$-a = 10;,$1a = 10;,7,8
+Find incorrect way of declaring variables:,PHP, D,Beginner,$a1 = 10;,$$a = 10;,7,8
+"2?""Hi"":""Bye"";
+
+echo ""$b"";
+?>",PHP, B,Beginner,5,6,7,8
+,,,,,,,
