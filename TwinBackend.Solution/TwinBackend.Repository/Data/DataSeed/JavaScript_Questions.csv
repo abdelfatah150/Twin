@@ -1,0 +1,54 @@
+Title,Level,Correct_Answer,Category,Choice_1,Choice_2,Choice_3,Choice_4
+Javascript string using double quotes is exactly the same as a string using single quotes,Beginner, A,JavaScript,TRUE,FALSE,NaN,None of the above
+"What is the output of following Javascript?
+
+var a = 'cpp';
+var b = 'buzz';
+var c = a/b;
+document.write(c);",Beginner, C,JavaScript,cppbuzz,cpp/buzz,1020,40
+"Find output of below code
+
+var a = '10';
+var b = a = 20;
+document.write(a+b);",Beginner, D,JavaScript,Error in Script,'10'20,Infinity is printed,Some Garbage Value
+"What is divide by 0 in Javascript?
+
+var a = 10;
+var b = 0;
+document.write(a/b);",Beginner, C,JavaScript,Nothing is printed,0 is printed,error,NaN
+"What is default value of any variable in Javascript?
+
+var a;
+document.write(a);",Beginner, B,JavaScript,0,undefined,1010,1011
+"How ++ works in Javascript? Find output of below Javascript code.
+
+var a = 10;
+document.write(a++);
+document.write(a);",Beginner, D,JavaScript,1111,1110,10,20
+"Find output of below Javascript code
+
+var a = 10;
+document.write(a=20);",Beginner, D,JavaScript,Error,Nothing is printed,2 plus 2 is 22,2 plus 2 is 2 + 2
+"Find output of below Javascript addition code
+
+document.write(""2 plus 2 is "" + 2 + 2);",Beginner, C,JavaScript,4,2 plus 2 is 4,4  = 2 plus 2,Syntax Error
+Find output of below Javascript code,Beginner, C,JavaScript,2+2+ = 2 plus 2,4 + = 2 plus 2,Error,NaN
+A prompt box asks the user for some information and provides a response field for the answer,Practitioner, A,JavaScript,TRUE,FALSE,20,10
+What is the output of below Javascript code if user keeps the default value of prompt box?,Expert, B,JavaScript,Nothing is printed,human,10,11
+"We can use the === (equality) operator to compare a variable with a string, Can we use it to compare two numbers?",Practitioner, A,JavaScript,Yes,No,Nothing is printed,Error
+What if we put ; after if? does it really affect? Find the output of below Javascript,Beginner, D,JavaScript,Error,Nothing is printed,135,24
+What if we put ++ operator inside if condition?  find the output of below code,Practitioner, D,JavaScript,Error,Nothing is printed,Compilation Error,5
+Find the output of below Javascript,Practitioner, B,JavaScript,10,11,1234,Compilation Error
+Find the output of below for loop in Javascript,Beginner, D,JavaScript,1234,12345,1234,Compilation Error
+Can we put ; after for loop in Javascript? find the output of below code,Practitioner, D,JavaScript,24,135,135,13
+Is it mandatory to put all three conditions in for loop? find the output of below Javascript code,Practitioner, B,JavaScript,1234,12345,Javascript,JavascriptJavascript
+Is it mandatory to put all three conditions in for loop? find the output of below Javascript code,Practitioner, B,JavaScript,1234,12345,0 is the output,NaN is the output
+Example of arrays in Javascript. Find output of below code,Practitioner, D,JavaScript,12345,1234,NaN,None of the above
+Can we create empty array in Javascript? Find the output of below code,Practitioner, C,JavaScript,Error,Nothing is printed,Error,"""<h1>Javascript Questions</h1>"""
+Math.ceil() and Math.floor() are methods which are used with number. How Javascript behaves when any character is passed instead of numbers? like,Expert, D,JavaScript,It is Error,Nothing is printed,,
+What is the output of Math.ceil(0) in Javascript?,Expert, B,JavaScript,1,0,,
+"Find the output of below code
+
+
+
+JavaScript Example",Practitioner, B,JavaScript,<h1>Javascript Questions</h1>,Javascript Questions,,

@@ -1,0 +1,6 @@
+@TwinBackend.APIs_HostAddress = http://localhost:5113
+
+GET {{TwinBackend.APIs_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
