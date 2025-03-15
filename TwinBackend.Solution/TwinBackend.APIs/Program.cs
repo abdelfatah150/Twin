@@ -83,12 +83,12 @@ namespace TwinBackend.APIs
             builder.Services.AddScoped(typeof(IJwtService), typeof(JwtService));
             builder.Services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
 
-            builder.Services.AddSingleton<IConnectionMultiplexer>((ServiceProvider) =>
-            {
-                var connection = builder.Configuration.GetConnectionString("Redis");
-                return ConnectionMultiplexer.Connect(connection);
-            }
-            );
+            //builder.Services.AddSingleton<IConnectionMultiplexer>((ServiceProvider) =>
+            //{
+            //    var connection = builder.Configuration.GetConnectionString("Redis");
+            //    return ConnectionMultiplexer.Connect(connection);
+            //}
+            //);
 
             builder.Services.AddSingleton<ICacheService, CacheService>();
 

@@ -5,7 +5,7 @@ import {
   validateField,
   validateStep1,
   validateStep2,
-} from "../utils/validation"; // Import validation functions
+} from "../utils/validation";
 
 interface EntrepreneurSignupProps {
   step: number;
@@ -14,7 +14,8 @@ interface EntrepreneurSignupProps {
 
 const EntrepreneurSignup: React.FC<EntrepreneurSignupProps> = ({ step, setStep }) => {
   const navigate = useNavigate();
-  
+
+  // Form state
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -23,32 +24,32 @@ const EntrepreneurSignup: React.FC<EntrepreneurSignupProps> = ({ step, setStep }
     field: "",
   });
 
-  const [errors, setErrors] = useState<{ [key: string]: string }>({}); // Track validation errors
+  // Error state
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
-  // Handle Input Change & Validate Field Individually
+  // Handle input changes & update state
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
 
+    // Validate input field & update errors
     const error = validateField(name, value, formData);
-    setErrors((prevErrors) => ({ ...prevErrors, [name]: error }));
+    setErrors((prevErrors) => ({ ...prevErrors, [name]: error ?? "" }));
 
+    // Save email in sessionStorage for later use
     if (name === "email") {
-      sessionStorage.setItem("userEmail", value); // Save email to session storage
+      sessionStorage.setItem("userEmail", value);
     }
   };
 
-  // Handle Moving to Step 2 (Validates Step 1)
+  // Handle moving to the next step (validates step 1)
   const handleNextStep = () => {
     const step1Errors = validateStep1(formData, "entrepreneur");
 
-    // Ensure every field exists with a default empty string
-    const formattedErrors: { [key: string]: string } = {
-      email: "",
-      password: "",
-      confirmPassword: "",
-      ...step1Errors, // Override with actual validation results
-    };
+    // Convert undefined values to empty strings
+    const formattedErrors: { [key: string]: string } = Object.fromEntries(
+      Object.entries(step1Errors).map(([key, value]) => [key, String(value ?? "")])
+    );
 
     setErrors(formattedErrors);
 
@@ -57,20 +58,59 @@ const EntrepreneurSignup: React.FC<EntrepreneurSignupProps> = ({ step, setStep }
     }
   };
 
-  // Handle Form Submission (Validates Step 2)
-  const handleSubmit = () => {
+  // Handle form submission (validates step 2)
+  const handleSubmit = async () => {
     const step2Errors = validateStep2(formData, "entrepreneur");
 
-    // Ensure all fields are properly formatted as strings
-    const formattedErrors: { [key: string]: string } = {
-      field: "",
-      ...step2Errors, // Override with actual validation results
-    };
+    // Convert undefined values to empty strings
+    const formattedErrors: { [key: string]: string } = Object.fromEntries(
+      Object.entries(step2Errors).map(([key, value]) => [key, String(value ?? "")])
+    );
 
     setErrors(formattedErrors);
 
     if (Object.values(formattedErrors).every((error) => error === "")) {
-      navigate("/signup/check-email");
+      try {
+        const payload = {
+          SignUpFor: "Entrepreneur",
+          Email: formData.email,
+          Password: formData.password,
+          ConfirmPassword: formData.confirmPassword,
+          FullName: formData.fullName,
+          Field: formData.field,
+          Tracks: [],
+          DeveloperSkills: [],
+        };
+
+        const response = await fetch("https://localhost:7169/api/Auth/Register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json();
+
+          if (errorData.errors) {
+            setErrors(
+              Object.fromEntries(
+                Object.entries(errorData.errors).map(([key, value]) => [key, String(value)])
+              )
+            );
+          }
+
+          throw new Error(errorData.message || "Registration failed.");
+        }
+
+        // Navigate to email verification page
+        navigate("/signup/check-email");
+      } catch (error: unknown) {
+        if (error instanceof Error) {
+          alert(`Error: ${error.message}`);
+        } else {
+          alert("An unexpected error occurred.");
+        }
+      }
     }
   };
 
@@ -79,25 +119,57 @@ const EntrepreneurSignup: React.FC<EntrepreneurSignupProps> = ({ step, setStep }
       {step === 1 ? (
         <div className="signup-form-container">
           <div className="signup-fields">
-            <input type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleChange} />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
             {errors.email && <p className="error-text">{errors.email}</p>}
 
-            <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
             {errors.password && <p className="error-text">{errors.password}</p>}
 
-            <input type="password" name="confirmPassword" placeholder="Confirm Password" value={formData.confirmPassword} onChange={handleChange} />
+            <input
+              type="password"
+              name="confirmPassword"
+              placeholder="Confirm Password"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              required
+            />
             {errors.confirmPassword && <p className="error-text">{errors.confirmPassword}</p>}
           </div>
           <button className="next-btn" onClick={handleNextStep}>Next</button>
-          <p className="login-text">Already have an account? <a className="link" href="/login">Login</a></p>
         </div>
       ) : (
         <div className="signup-form-container">
           <div className="signup-fields">
-            <input type="text" name="fullName" placeholder="Full Name" value={formData.fullName} onChange={handleChange} />
+            <input
+              type="text"
+              name="fullName"
+              placeholder="Full Name"
+              value={formData.fullName}
+              onChange={handleChange}
+              required
+            />
             {errors.fullName && <p className="error-text">{errors.fullName}</p>}
 
-            <select name="field" value={formData.field} onChange={handleChange}>
+            <select
+              name="field"
+              value={formData.field}
+              onChange={handleChange}
+              required
+            >
               <option value="" disabled>Select Your Field</option>
               <option value="healthcare">Healthcare</option>
               <option value="finance">Finance</option>
@@ -106,7 +178,6 @@ const EntrepreneurSignup: React.FC<EntrepreneurSignupProps> = ({ step, setStep }
             {errors.field && <p className="error-text">{errors.field}</p>}
           </div>
           <button className="create-btn" onClick={handleSubmit}>Create Account</button>
-          <p className="terms">By signing up, you agree to our <a className="link" href="/terms">Terms and Conditions</a></p>
         </div>
       )}
     </div>
