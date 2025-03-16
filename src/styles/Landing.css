@@ -417,10 +417,20 @@ padding: 5px 0px;
         text-align: center;
     }
     .footer-info, .social {
+        width: 100%;
         align-items: center;
+        margin-bottom: 20px;
     }
     .social-icons {
         justify-content: center;
     }
 }
-
+@media (max-width: 576px) {
+    .social-icons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .social-icons a {
+        margin-bottom: 10px;
+    }
+}
