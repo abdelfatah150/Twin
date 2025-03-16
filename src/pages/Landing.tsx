@@ -37,7 +37,7 @@ const Landing: React.FC = () => {
     </section>
 
     <section id="about-us">
-      <div className='title'>
+      <div className='about-us-title'>
         <div className='lines'>
         <div className='line-1'></div>
         <div className='line-2'></div>
@@ -65,7 +65,7 @@ const Landing: React.FC = () => {
       </div>
     </section>
     <section id="how-it-works">
-      <div className='title'>
+      <div className='about-us-title'>
         <div className='lines'>
         <div className='line-1'></div>
         <div className='line-2'></div>
@@ -107,7 +107,7 @@ const Landing: React.FC = () => {
         </div>
     </section>
     <section id="our-vision">
-      <div className='title'>
+      <div className='about-us-title'>
         <div className='lines'>
         <div className='line-1'></div>
         <div className='line-2'></div>
