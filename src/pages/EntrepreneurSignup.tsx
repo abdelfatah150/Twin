@@ -82,7 +82,7 @@ const EntrepreneurSignup: React.FC<EntrepreneurSignupProps> = ({ step, setStep }
           DeveloperSkills: [],
         };
 
-        const response = await fetch("https://localhost:7169/api/Auth/Register", {
+        const response = await fetch("http://localhost:7169/api/Auth/Register", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
