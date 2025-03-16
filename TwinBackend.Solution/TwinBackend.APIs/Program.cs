@@ -83,19 +83,42 @@ namespace TwinBackend.APIs
             builder.Services.AddScoped(typeof(IJwtService), typeof(JwtService));
             builder.Services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
 
-            //builder.Services.AddSingleton<IConnectionMultiplexer>((ServiceProvider) =>
-            //{
-            //    var connection = builder.Configuration.GetConnectionString("Redis");
-            //    return ConnectionMultiplexer.Connect(connection);
-            //}
-            //);
+            builder.Services.AddSingleton<IConnectionMultiplexer>((ServiceProvider) =>
+            {
+                var connection = builder.Configuration.GetConnectionString("Redis");
+                return ConnectionMultiplexer.Connect(connection);
+            }
+            );
 
             builder.Services.AddSingleton<ICacheService, CacheService>();
 
 
             builder.Services.AddAuthorization();
 
+
+
+
+            // cors frontend 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowFrontend",
+                    policy =>
+                    {
+                        policy.WithOrigins("http://localhost:5173") // Allow React frontend
+                              .AllowAnyHeader()
+                              .AllowAnyMethod()
+                              .AllowCredentials(); // Only needed if using cookies/authentication
+                    });
+            });
+
+
             var app = builder.Build();
+
+
+
+            // Enable CORS before authentication
+            app.UseCors("AllowFrontend");
+
 
 
             //try
@@ -184,6 +207,8 @@ namespace TwinBackend.APIs
             }
 
             app.UseHttpsRedirection();
+
+
 
             app.UseAuthentication();
             app.UseAuthorization();

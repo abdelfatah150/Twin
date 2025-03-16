@@ -88,23 +88,57 @@ const DeveloperSignup: React.FC<DeveloperSignupProps> = ({ step, setStep }) => {
   // Handle Form Submission (Validates Step 2)
  
 
-  const handleSubmit = () => {
-  const step2Errors = validateStep2(formData, "developer");
-
-  // Ensure all fields are properly formatted as strings
-  const formattedErrors: { [key: string]: string } = {
-    track: "",
-    technologies: "",
-    ...step2Errors, // Override with actual validation results
+  const handleSubmit = async () => {
+    const step2Errors = validateStep2(formData, "developer");
+    setErrors(step2Errors);
+  
+    if (Object.values(step2Errors).every((error) => error === "")) {
+      try {
+        const payload = {
+          SignUpFor: "Developer",
+          Email: formData.email,
+          Password: formData.password,
+          ConfirmPassword: formData.confirmPassword,
+          FullName: formData.fullName,
+          Field: "",
+          Tracks: formData.track ? [formData.track] : [],
+          DeveloperSkills: formData.technologies,
+        };
+  
+        const response = await fetch("https://localhost:7169/api/Auth/Register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+  
+        if (!response.ok) {
+          const errorData = await response.json();
+  
+          let errorMessage = "Registration failed.\n";
+  
+          // Check if the response is an array of errors
+          if (Array.isArray(errorData)) {
+            errorMessage += errorData.map((err) => `- ${err.description}`).join("\n");
+          } else if (errorData.errors) {
+            errorMessage += Object.entries(errorData.errors)
+              .map(([key, value]) => `${key}: ${Array.isArray(value) ? value.join(" ") : value}`)
+              .join("\n");
+          } else if (errorData.message) {
+            errorMessage += errorData.message;
+          }
+  
+          alert(errorMessage);
+          return;
+        }
+  
+        // Navigate to email verification page on success
+        navigate("/signup/check-email");
+      } catch (error: unknown) {
+        alert("An unexpected error occurred. Please try again later.");
+      }
+    }
   };
-
-  setErrors(formattedErrors);
-
-  if (Object.values(formattedErrors).every((error) => error === "")) {
-    navigate("/signup/check-email");
-  }
-};
-
+    
   return (
     <div>
       {step === 1 ? (

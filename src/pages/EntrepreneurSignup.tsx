@@ -72,17 +72,17 @@ const EntrepreneurSignup: React.FC<EntrepreneurSignupProps> = ({ step, setStep }
     if (Object.values(formattedErrors).every((error) => error === "")) {
       try {
         const payload = {
-          SignUpFor: "Entrepreneur",
+          SignUpFor: "Client",
           Email: formData.email,
           Password: formData.password,
           ConfirmPassword: formData.confirmPassword,
           FullName: formData.fullName,
           Field: formData.field,
           Tracks: [],
-          DeveloperSkills: [],
+          DeveloperSkills: []
         };
 
-        const response = await fetch("http://localhost:7169/api/Auth/Register", {
+        const response = await fetch("https://localhost:7169/api/Auth/Register", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
