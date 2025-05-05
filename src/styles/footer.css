@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --primary-color: #224F34;
+    --secondary-color: #267D49;
+    --font-main: 'Poppins', sans-serif;
+    --logo-font: 'Abril Fatface', serif;
+    --secondary-font:"Roboto Slab", serif;
+    --serif-font:"Roboto Serif", serif;
+    --used-color:#E2FBEA;
+    }  
+
+.color{background-color: var(--used-color)!important;}
+
+.primary-color{color: #224F34 !important;}
+
+
+  
+.footer {
+    background-color: #1b4d36; 
+    color: white;
+    padding: 40px;
+    overflow: hidden;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-left .logo {
+    font-family: var(--logo-font);
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.footer-middle {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-line {
+    width: 60%;
+    border: 0.3px solid #cccccce1;
+}
+
+.social-icons p{
+  font-size: 17px;
+  color: white;
+  padding-right: 15px;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+  margin-bottom: 40px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1); 
+}
+
+.terms a {
+    color: white;
+    text-decoration: none;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,65 @@
+:root {
+  --primary-color: #224F34;
+  --secondary-color: #267D49;
+  --font-main: 'Poppins', sans-serif;
+  --logo-font: 'Abril Fatface', serif;
+  --secondary-font:"Roboto Slab", serif;
+  --serif-font:"Roboto Serif", serif;
+  --used-color:#E2FBEA;
+  }  
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 30px;
+    font-weight: 520;
+  }
+
+  .logo {
+    font-family: var(--logo-font);
+    font-size: 50px;
+    font-weight: bold;
+    color: #224F34;
+    margin: 4px 0;
+
+  }
+
+  .nav-links a {
+    font-size: 20px;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #08642d;
+    padding: 0 8px;
+  }
+  
+  .logout-btn {
+    font-size: 21px;
+    padding: 8px 15px;
+    background-color: #fff;
+    color: #1b7e42;
+    border: .5px solid #14532d;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 120px;
+  }
+
+  .share-btn {
+    font-size: 21px;
+    padding: 8px 15px;
+    background-color: #fff;
+    color: #1b7e42;
+    border: .5px solid #14532d;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 120px;
+  }
+  
+  .header-divider {
+    border: none;
+    height: 2px;
+    background-color: #cccccc;
+    margin: 8px 10px;
+  }
+  
