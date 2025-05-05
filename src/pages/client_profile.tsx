@@ -92,7 +92,7 @@ const ProfilePage: React.FC = () => {
           <h2>Projects</h2>
           {profileData.projects.length > 0 ? (
             profileData.projects.map((project, index) => (
-              <div key={index} className="project-card">
+              <div key={index} className="profile-project-card">
                 <h4>{project.title}</h4>
                 <p>{project.description}</p>
                 <p className="developer"><strong>Developer:</strong> {project.developer}</p>
