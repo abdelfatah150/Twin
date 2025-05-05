@@ -155,10 +155,11 @@ const SharedDeveloperProfile: React.FC = () => {
           </main>
         </div>
 
-        <div className="projects-container">
-          <h3 className="projects-title">Projects</h3>
+        
+        <div className="profile-projects-container">
+          <h3 className="profile-projects-title">Projects</h3>
 
-          <div className="track-select">
+          <div className="profile-track-select">
             <select
               value={selectedTrack}
               onChange={(e) => setSelectedTrack(e.target.value)}
@@ -175,38 +176,40 @@ const SharedDeveloperProfile: React.FC = () => {
           {(() => {
             const filtered = profileData.projects.filter(
               (project) =>
-                selectedTrack === 'All' || project.track === selectedTrack
+                selectedTrack === "All" || project.track === selectedTrack
             );
 
             if (filtered.length === 0) {
               return (
                 <div className="no-projects">
-                  <p>No Projects</p>
+                  <p>
+                    No Projects
+                  </p>
                 </div>
               );
             }
 
             return filtered.map((project, index) => (
-              <div className="project-card" key={index}>
-                <h4 className="project-name">{project.title}</h4>
+              <div className="profile-project-card" key={index}>
+                <h4 className="profile-project-name">{project.title}</h4>
 
-                <div className="project-row">
-                  <div className="project-box">
+                <div className="profile-project-row">
+                  <div className="profile-project-box">
                     <strong>Description</strong>
                     <p>{project.description}</p>
                   </div>
 
-                  <div className="project-box rating-box">
+                  <div className="profile-project-box profile-rating-box">
                     <strong>Developer Rating</strong>
-                    <div className="stars">
-                      {'★'.repeat(project.rating)}
-                      {'☆'.repeat(5 - project.rating)}
+                    <div className="profile-stars">
+                      {"★".repeat(project.rating)}
+                      {"☆".repeat(5 - project.rating)}
                     </div>
                     <p>{project.rating}/5</p>
                   </div>
                 </div>
 
-                <div className="project-box">
+                <div className="profile-project-box">
                   <strong>Client Review</strong>
                   <p>{project.review}</p>
                 </div>
