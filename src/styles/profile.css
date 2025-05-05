@@ -276,19 +276,19 @@
   font-size: 22px;
 }
 
-.projects-container {
+.profile-projects-container {
   padding-left: 55px;
   padding-right: 55px;
   font-family: Arial, sans-serif;
 }
 
-.projects-title {
+.profile-projects-title {
   font-weight: bold;
   margin-bottom: 1rem;
   font-size: 24px;
 }
 
-.track-select select {
+.profile-track-select select {
   width: 250px;
   height: 50px;
   padding-left: 20px;
@@ -305,7 +305,7 @@
 
 }
 
-.project-card {
+.profile-project-card {
   background-color: #e6f9e6; 
   border-radius: 10px; 
   padding: 40px;
@@ -347,31 +347,31 @@
 
 
 
-.project-card h4 {
+.profile-project-card h4 {
 font-size: 19px;
   font-weight: bold;
   text-align: center;
 }
 
-.project-card p {
+.profile-project-card p {
   text-align: justify; 
   margin-top: 10px;
   
 }
 
-.project-card .developer {
+.profile-project-card .developer {
   font-weight: bold;
   margin-top: 10px;
 }
 
-.project-name {
+.profile-project-name {
   font-size: 1.1rem;
   font-weight: 600;
   color: #1e4620;
   margin-bottom: 1rem;
 }
 
-.project-row {
+.profile-project-row {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -379,7 +379,7 @@ font-size: 19px;
   margin-bottom: 1rem;
 }
 
-.project-box {
+.profile-project-box {
   background-color: #ffffff;
   border-radius: 8px;
   padding: 1rem;
@@ -387,75 +387,18 @@ font-size: 19px;
   min-width: 250px;
 }
 
-.rating-box p{
+.profile-rating-box p{
   text-align: center;
   font-size: 18px;
 }
 
-.stars {
+.profile-stars {
   color: #ffc107;
   font-size: 1.6rem;
   margin: 0.5rem 0;
 }
 
-
-.footer {
-  background-color: #1b4d36; 
-  color: white;
-  padding: 40px;
-}
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.footer-left {
-  text-align: left;
-}
-.footer-left .logo {
-  font-size: 34px;
-  font-weight: bold;
-  margin-bottom: 50px;
-  color: #e6f9e6;
-}
-.footer-middle {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-.footer-line {
-  width: 60%;
-  border: 0.3px solid #cccccce1;
-}
-.social-icons {
-  display: flex;
-  align-items: center;
-  gap: 10px; 
-  margin-bottom: 40px;
-}
-.social-icons p {
-  font-size: 17px;
-  color: white;
-  padding-right: 15px;
-}
-.social-icons img {
-  width: 24px;
-  height: 24px;
-  transition: transform 0.3s ease-in-out;
-}
-.social-icons img:hover {
-  transform: scale(1.1);
-}
-.terms a {
-  color: white;
-  text-decoration: none;
-}
-.terms a:hover {
-  text-decoration: underline;
-}
-
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .footer-content {
     flex-direction: column;
     text-align: center;
@@ -471,4 +414,4 @@ font-size: 19px;
   .footer-line {
     width: 80%;
   }
-}
+} */

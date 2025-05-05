@@ -1,24 +1,14 @@
-:root {
-  --primary-color: #224F34;
-  --secondary-color: #267D49;
-  --font-main: 'Poppins', sans-serif;
-  --logo-font: 'Abril Fatface', serif;
-  --secondary-font:"Roboto Slab", serif;
-  --serif-font:"Roboto Serif", serif;
-  --used-color:#E2FBEA;
-  }  
-
-.top-header {
+.top-header-home {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #ffffff;
-    padding: 10px 30px;
+    padding: 0px 30px;
     font-weight: 520;
   }
 
-  .logo {
-    font-family: var(--logo-font);
+  .logo-home {
+    font-family:'Abril Fatface', serif ;
     font-size: 50px;
     font-weight: bold;
     color: #224F34;
@@ -26,7 +16,7 @@
 
   }
 
-  .nav-links a {
+  .nav-links-home a {
     font-size: 20px;
     margin: 0 15px;
     text-decoration: none;
@@ -34,7 +24,7 @@
     padding: 0 8px;
   }
   
-  .logout-btn {
+  .logout-home-btn {
     font-size: 21px;
     padding: 8px 15px;
     background-color: #fff;
@@ -45,7 +35,7 @@
     width: 120px;
   }
 
-  .share-btn {
+  .share-home-btn {
     font-size: 21px;
     padding: 8px 15px;
     background-color: #fff;
@@ -56,7 +46,7 @@
     width: 120px;
   }
   
-  .header-divider {
+  .header-divider-home {
     border: none;
     height: 2px;
     background-color: #cccccc;
