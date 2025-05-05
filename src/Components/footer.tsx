@@ -3,16 +3,16 @@ import '../styles/footer.css';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="footer">
-      <div className="footer-content">
-        <div className="footer-left">
-          <h2 className="logo">Twin</h2>
-          <p>© 2025 Twin. All rights reserved.</p>
+    <footer className="footer-home">
+      <div className="footer-home-content">
+        <div className="footer-home-left">
+          <h2 className="footer-home-left-logo">Twin</h2>
+          <p className='footer-home-left-p'>© 2025 Twin. All rights reserved.</p>
         </div>
-        <div className="footer-middle">
-          <hr className="footer-line" />
+        <div className="footer-home-middle">
+          <hr className="footer-home-line" />
         </div>
-        <div className="footer-right">
+        <div className="footer-home-right">
           <div className="social-icons">
             <p>Follow Us</p>
             <a href="https://instagram.com" target="_blank">
@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
             <img src='assets/linkedin (2) 1.png' alt='l-icon'/>
             </a>
           </div>
-          <p className="terms">
+          <p className="terms-home">
             <a href="#">Terms &amp; Conditions</a>
           </p>
         </div>
