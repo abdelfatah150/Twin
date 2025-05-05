@@ -33,7 +33,7 @@
     width: 50%;
     display: flex;
     justify-content: space-between;
-    margin-left: 20%;
+    margin-left: 12%;
     font-family: var(--font-main);
     }
     .nav-links-landing a {
