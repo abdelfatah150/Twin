@@ -8,6 +8,8 @@ import ForgotPassword from "./pages/ForgotPassword";
 import TestPage from "./pages/TestPage";
 import LandingPage from "./pages/Landing";
 import OnBoarding1 from "./pages/OnBoarding1";
+import DeveloperProfile from "./pages/developer_profile";
+import SharedDeveloperProfile from "./pages/shared_developer_profile";
 
 const App: React.FC = () => {
   const [hasCompletedOnboarding, setHasCompletedOnboarding] = useState<boolean>(false);
@@ -30,6 +32,8 @@ const App: React.FC = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/test" element={<TestPage />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/developer_profile" element={<DeveloperProfile />} /> 
+        <Route path="/shared_developer_profile" element={<SharedDeveloperProfile />} /> 
       </Routes>
     </Router>
   );
