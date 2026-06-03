@@ -232,12 +232,3 @@ Graduation Project – Faculty of Computers and Artificial Intelligence
 
 Developed as a solution to bridge the gap between junior software developers and entrepreneurs through intelligent, skill-based project matching.
 
----
-
-## 📬 Contact
-
-For questions, suggestions, or collaboration opportunities, feel free to reach out through GitHub.
-
----
-
-⭐ If you like the project, consider giving it a star.
