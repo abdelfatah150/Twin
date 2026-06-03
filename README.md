@@ -1,50 +1,243 @@
-# React + TypeScript + Vite
+# 🚀 Twin - AI-Powered Developer & Startup Matching Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Bridging the gap between junior developers seeking experience and entrepreneurs seeking affordable software solutions.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📖 Overview
 
-## Expanding the ESLint configuration
+Twin is an AI-powered platform that connects early-career software developers with entrepreneurs and startup founders.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+The platform helps developers gain real-world project experience while enabling business owners to transform their ideas into software products without the high costs associated with traditional development teams.
 
-- Configure the top-level `parserOptions` property like this:
+Unlike traditional freelancing platforms, Twin uses an intelligent matching engine that automatically identifies and ranks suitable developers based on skills, technical assessments, ratings, and project history.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+---
+
+## 🎯 Problem Statement
+
+### Developers Face
+
+- Lack of professional experience.
+- Difficulty securing their first opportunity.
+- Limited access to real-world projects.
+- Weak portfolios due to lack of client work.
+
+### Entrepreneurs Face
+
+- High development costs.
+- Difficulty finding trustworthy technical talent.
+- Limited technical knowledge.
+
+### Our Solution
+
+Twin creates a win-win ecosystem where:
+
+- Developers gain practical experience.
+- Entrepreneurs receive affordable development support.
+- Projects are matched automatically through AI-powered analysis.
+
+---
+
+## ✨ Key Features
+
+### 👨‍💻 Developer Features
+
+- Sign up with track and skill selection.
+- Technical assessment during onboarding.
+- Profile management.
+- Receive project invitations automatically.
+- Accept or reject project requests.
+- Real-time collaboration and communication.
+- Build a portfolio through completed projects.
+
+### 💼 Business Owner Features
+
+- Create and publish projects.
+- View matched developer profiles.
+- Communicate with developers.
+- Rate developers after project completion.
+
+### 🛡️ Admin Features
+
+- View and manage users.
+- Block and unblock accounts.
+- Monitor active projects.
+- Access reporting and analytics dashboards.
+
+---
+
+## 🧠 AI-Powered Matching System
+
+Twin uses an intelligent matching workflow:
+
+```text
+Project Submission
+        │
+        ▼
+   AI Analysis
+        │
+        ▼
+ Skills Extraction
+        │
+        ▼
+ Identify Required Roles
+        │
+        ▼
+ Find Eligible Developers
+        │
+        ▼
+ Rank Candidates
+        │
+        ▼
+ Send Invitations
+        │
+        ▼
+ Accept / Reject
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Ranking Metrics
 
-```js
-// eslint.config.js
-import react from "eslint-plugin-react";
+Developers are evaluated using:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: "18.3" } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs["jsx-runtime"].rules,
-  },
-});
+- Skills Match Percentage
+- Technical Test Score
+- Average Rating
+- Finished Tasks Count
+- Rejected Offers Count
+- Missed Offers Count
+
+This ensures fair and objective project assignments.
+
+---
+
+## 🏗️ System Architecture
+
+Twin follows a Three-Tier Architecture.
+
+```text
+┌─────────────────────┐
+│  Presentation Layer │
+│      React.js       │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│  Application Layer  │
+│ ASP.NET Core Web API│
+│ Business Logic      │
+│ AI Integration      │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│      Data Layer     │
+│    SQL Server       │
+│       Redis         │
+└─────────────────────┘
 ```
+
+---
+
+## 🛠️ Technology Stack
+
+### Frontend
+
+- React.js
+
+### Backend
+
+- ASP.NET Core Web API
+- RESTful APIs
+
+### Database
+
+- Microsoft SQL Server
+
+### Caching
+
+- Redis
+
+### Cloud
+
+- Microsoft Azure
+
+### Artificial Intelligence
+
+- LLM Integration
+- OpenAI API
+
+### Design & Documentation
+
+- Figma
+- Draw.io
+- Lucidchart
+- BPMN
+
+---
+
+## 📊 Business Model
+
+### Current Model
+
+- Free for Developers
+- Free for Entrepreneurs
+
+### Planned Revenue Streams
+
+- Premium Subscription Plans
+- Maintenance Contracts
+- Talent Recruitment Services
+
+---
+
+## 🌟 What Makes Twin Different?
+
+| Feature | Twin | Upwork | Freelancer | Fiverr |
+|----------|--------|----------|-------------|----------|
+| Automated Developer Selection | ✅ | ❌ | ❌ | ❌ |
+| AI-Based Matching | ✅ | ❌ | ❌ | ❌ |
+| No Bidding Process | ✅ | ❌ | ❌ | ✅ |
+| Technical Assessment | ✅ | Optional | Optional | Optional |
+| Automatic Project Invitations | ✅ | ❌ | ❌ | ❌ |
+| Free Platform Usage | ✅ | ❌ | ❌ | ❌ |
+
+---
+
+## 📈 Future Enhancements
+
+- Mobile Application
+- Advanced Recommendation Engine
+- Automated Portfolio Generation
+- Enhanced Analytics Dashboard
+- Recruitment Services
+- Premium Membership Plans
+
+---
+
+## 👥 Team
+
+- Abdelfatah Samir
+- Habiba Ihab
+- Hager Ragaee
+- Mark Ayman
+- Omar Ezz
+- Youssef Karam
+
+---
+
+## 🎓 Academic Project
+
+Graduation Project – Faculty of Computers and Artificial Intelligence
+
+Developed as a solution to bridge the gap between junior software developers and entrepreneurs through intelligent, skill-based project matching.
+
+---
+
+## 📬 Contact
+
+For questions, suggestions, or collaboration opportunities, feel free to reach out through GitHub.
+
+---
+
+⭐ If you like the project, consider giving it a star.
